@@ -4,31 +4,51 @@ Este trabalho caracteriza-se como uma monografia submetida ao curso de graduaç�
 
 \section{Contextualização}
 
+As empresas que atuam no desenvolvimento de software possuem os desafios de lidar com a crescente taxa de mudanças tecnológicas e adicionalmente, com o aumento dos níveis de concorrência em escala global. Mediante esta perpectiva, a fim de permanecer, as empresas buscam constantemente novas estratégias para se diferenciarem de seus concorrentes.
+
+Nesse âmbito, deve-se considerar também a crescente complexidade dos produtos de software. Como resultado da combinação entre este fato e a crescente pressão imposta pelo mercado, as empresas se voltam para investigação das abordagens de validação e das técnicas de verificação para garantir o desenvolvimento de produtos de valor agregado e de alta qualidade \cite{vbse1}.
+
+Assim, as empresas, para fazerem uso conjunto das práticas de verificação e validação de software, precisam deter um processo de desenvolvimento bem definido, pois este apresenta forte impacto sobre a qualidade do produto de software construído. Contudo, durante a concepção deste processo de desenvolvimento, muitas organizações não conseguem abstrair as práticas mais básicas e extremamente necessárias para a construção do produto e acabam por negligenciar determinadas atividades. A exemplo dessa afirmação, tem-se a negligência que se pode contemplar em atividades de implementação e execução de testes e também, nas inspeções de código. Para atender aos prazos, muitas equipes de projeto decidem protelar essas atividades, tornando a qualidade do produto inferior ao que se poderia obter. Adicionalmente, em muitos casos, as atividades técnicas como as citadas anteriormente não estão alinhadas plenamente aos interesses dos clientes, favorecendo a entrega de um produto de menor valor agregado.
+
+Elaborar um processo de desenvolvimento perfeitamente adequado para as necessidades da organização e que também atenda de forma concisa aos interesses de todos os envolvidos no projeto não é uma tarefa fácil. Porém, a perspectiva de valor fornece uma boa maneira de olhar para o processo de desenvolvimento do produto.
+
+É válido ressaltar que os envolvidos em um projeto de desenvolvimento de software (clientes, analistas de negócio, gerentes de projetos, arquitetos de software, desenvolvedores etc) devem possuir um melhor entendimento das implicações provenientes das decisões efetuadas sobre o produto \cite{vbse1}.
+
 \section{Problema}
 
-O problema identificado é a falta de guias que reunem as principais práticas propostas pela Engenharia de Software no tocante à elaboração de testes de unitários, às inspeções de código e à manutenção, tanto evolutiva quanto corretiva, para a construção de produtos de software de maior qualidade.
+O problema identificado é o não atendimento às principais práticas propostas pela Verificação de Software para a construção de produtos de software de maior qualidade. Na grande maioria dos projetos da indústria de desenvolvimento, essas práticas são negligenciadas, caracterizando-se como atividades de menor importância.
 
-Adicionalmente, outro quesito do problema que deve ser ressaltado é que as concepções dos clientes de negócio não são concisamente levadas em conta no momento da execução de atividades mais técnicas como as citadas anteriormente. Para exemplificar esta afirmação, basta analisar o que ocorre durante a elaboração e execução de testes para o sistema que está sendo construído. Testes, muitas vezes não estão organizados para maximizar o valor de negócio e não alinhados com a missão do projeto \cite{vbse2}.
+Adicionalmente, outro quesito do problema que deve ser ressaltado é que as concepções dos clientes de negócio não são concisamente levadas em conta no momento da execução de atividades mais técnicas como as citadas anteriormente. Para exemplificar esta afirmação, basta analisar o que ocorre durante a elaboração e execução de testes para o sistema que está sendo construído. Testes, muitas vezes não estão organizados para maximizar o valor de negócio e também, não estão alinhados com a missão do projeto \cite{vbse2}.
 
-Na busca de possíveis soluções para a problemática destacada, do ponto de vista técnico, já existem várias práticas propostas pela Engenharia de Software, tais como a elaboração de testes, inspeção de código etc. Nesse sentido, seria necessário reunir esse conjunto de boas práticas em um guia. Por outro lado, para lidar com a conciliação dos interesses de todos os envolvidos em um projeto de construção de software, tem-se as abordagens da VBSE - Engenharia de Software Baseada em Valor.
+Na busca de possíveis soluções para a problemática destacada, do ponto de vista técnico, já existem práticas propostas pela Verificação de Software, tais como a elaboração de testes, inspeção de código etc. Nesse sentido, seria necessário reunir esse conjunto de boas práticas em um único guia. Por outro lado, para lidar com a conciliação dos interesses de todos os envolvidos em um projeto de construção de software, tem-se as abordagens da Engenharia de Software Baseada em Valor (VBSE - Value-Based Software Engineer).
 
 A VBSE traz considerações de valor para o primeiro plano, de modo que as decisões em todos os níveis possam ser otimizadas, para atender ou conciliar os objetivos explícitos das partes interessadas, do marketing pessoal e analistas de negócio aos desenvolvedores, arquitetos e especialistas em qualidade \cite{vbse1}.
+
+Dessa forma, este trabalho apresenta uma investigação sobre como utilizar as inspeções e testes unitários, que são práticas complementares da Verificação de Software, em conjunto com os conceitos oriundos da VBSE, na avaliação da qualidade de código. A qualidade do código, naturalmente, influencia a qualidade de uso do software.
 
 \section{Objetivo}
 
 \subsection{Objetivo Geral}
 
-O objetivo geral deste trabalho é propor um conjunto de atividades, práticas e ferramentas que favoreçam a avaliação da qualidade de software, levando em consideração conceitos da VBSE.
+O objetivo geral deste trabalho é propor um conjunto de atividades, práticas e ferramentas que favoreçam as atividades de inspeção e elaboração de testes unitários, levando em consideração conceitos da VBSE.
 
 \subsection{Objetivos Específicos}
 
 Por objetivos específicos para este trabalho, tem-se:
 
 \begin{itemize}
-	\item Consolidar o entendimento acerca dos elementos necessários à construção do framework de avaliação da qualidade de software.
-	\item Trazer abordagens inerentes à inspeção, ao teste e à manutenção para a elaboração do framework.
+	\item Consolidar o entendimento acerca dos elementos necessários à construção do framework de avaliação da qualidade de código.
+	\item Pesquisar abordagens inerentes às inspeções e aos testes unitários para a elaboração do framework.
 	\item Definir detalhes acerca da execução das atividades propostas pelo framework junto às atividades presentes no Scrum.
 	\item Incorporar diretrizes propostas pela Engenharia de Software Baseada em Valor ao framework.
 \end{itemize}
 
-\section{Justificativa}
+\section{Organização do Documento}
+
+\begin{itemize}
+	\item \textbf{Capítulo 2 - Referencial Teórico}: apresenta conceitos e abordagens relacionados ao tema deste trabalho.
+
+	\item \textbf{Capítulo 3 - Proposta}: descreve a proposta de desenvolvimento de um framework para avaliação da qualidade de código.
+
+	\item \textbf{Capítulo 4 - Metodologia}: especifica a metodologia adotada para a pesquisa e desenvolvimento deste trabalho.
+\end{itemize}

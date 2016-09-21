@@ -18,8 +18,8 @@ EDITAVEIS_DIR = editaveis
 EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 					agradecimentos.tex epigrafe.tex resumo.tex abstract.tex \
 					abreviaturas.tex simbolos.tex consideracoesfinais.tex\
-					introducao.tex  \
-					desenvolvimento.tex \
+					introducao.tex referencialteorico.tex proposta.tex \
+					metodologia.tex \
 					apendices.tex anexos.tex
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
