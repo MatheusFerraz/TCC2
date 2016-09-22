@@ -1,1 +1,44 @@
 \chapter{Referencial Teórico}
+
+Primeiramente, é válido ressaltar que o \textit{framework} proposto neste trabalho está voltado para o contexto de desenvolvimento que adota metodologias ágeis. Adicionalmente, as atividades constituintes do \textit{framework} visam o alinhamento com os aspectos centrais e complementares propostos pela Verificação de \textit{Software}, que são as inspeções de código e implementação de testes, mais especificamente testes unitários para o âmbito do \textit{framework} concebido neste trabalho.
+
+Neste capítulo, busca-se apresentar conceitos que fundamentam a concepção do \textit{framework}. Na seção 2.1, é possível contemplar uma breve explanação com relação à Verificação de \textit{Software}. Já na seção 2.2, serão explanados aspectos principais inerentes às insepções de código. Por fim, ao longo da seção 2.3, serão apresentados definições elucidativas para a atividade de teste a partir de uma perspectiva genérica, aprofundando paulatinamente a análise para aspectos pontuais dos testes unitários.
+
+Os conceitos aqui apresentados são importantes pelo fato de demonstrarem plenamente o propósito das atividades existentes no \textit{framework}.
+
+\section{Verificação de \textit{Software}}
+
+//TO DO
+
+\section{Inspeção de Código}
+
+\section{Teste de \textit{Software}}
+
+Segundo o IEEE (\textit{Institute of Electrical and Eletronics Engineers}), um teste é uma atividade na qual um produto, sistema ou componente é executado sob condições especificadas. A partir dessa execução controlada, há uma observação e registro dos resultados e também, avaliação de um ou mais aspectos.
+
+Mediante essa abordagem, os testes são mais do que apenas um meio de detecção e correção de erros, mas se caracterizam também como indicadores da qualidade do produto. Em geral, quanto maior o número de defeitos detectados em um \textit{software}, infere-se que o número de defeitos não detectados também é grande.
+
+É importante ressaltar que a contemplação de uma quantidade exorbitante de defeitos em testes indica a provável necessidade de redesenho dos itens testados.
+
+Existe uma variedade de tipos de teste nos processos de desenvolvimento de \textit{software}. Contudo, a corrente pesquisa se propõe a avaliar mais prontamente aspectos associados aos testes unitários ou de unidade.
+
+\subsection{Testes Unitários}
+
+De maneira geral, como soluções em \textit{software} são elaboradas a partir de uma necessidade de um cliente real, muitas regras de negócio são implementadas e assim, alguns sistemas tornam-se razoavelmente complexos.
+
+Por outro lado, é importante destacar que devido às boas práticas propostas pela Engenharia de \textit{Software}, as regras de negócio não são implementadas em um único arquivo. Em um sistema orientado a objetos, por exemplo, existem diversas classes, cada uma exercendo um papel específico.
+
+Dessa forma, um teste de unidade não se preocupa com todo o sistema, mas apenas com uma pequena parte do mesmo. Geralmente, em sistemas orientados a objetos, uma unidade do sistema é uma classe. Contudo, levando em consideração outros paradigmas de programação, uma unidade também pode ser um procedimento.
+
+Além dos aspectos citados anteriormente, considerando o conceito de unidade adotado para a implementação dos testes unitários, faz-se necessária a construção de códigos auxiliares (\textit{Test Harness}) \cite{stubs1}. O código auxiliar é constituído de \textit{drivers} e \textit{stubs} de teste.
+
+Um \textit{driver}, basicamente, é uma unidade que implementa chamadas às funcionalidades testadas. Os \textit{stubs}, por sua vez, são utilizados para substituir funcionalidades que ainda não foram implementadas ou que estão subordinadas ao módulo que está sendo testado.
+
+A elaboração de \textit{drivers} e \textit{stubs} é importante pelo fato de que um determinado método de teste deve, de fato, testar uma unidade de maneira isolada. São mecanismos que auxiliam no tratamento do código como uma composição de várias unidades.
+
+É válido ressaltar que testes unitários estão inseridos no âmbito do primeiro nível da estratégia de teste de \textit{software} \cite{nasa}. A veracidade desta afirmação é comprovada pelo fato de que são os primeiros testes elaborados para um \textit{software} em construção, utilizando o conhecimento que se tem do código fonte.
+
+Como mencionado em seções anteriores, a corrente pesquisa foca a vertente dos testes em nível unitário. Sabe-se que os testes unitários, como qualquer outro teste e com suas particularidades, auxiliam na detecção de defeitos e indicam qualidade do \textit{software}. Contudo, também é necessário avaliar se os testes unitários são efetivos e se são portadores de qualidade, ou seja, se foram bem elaborados.
+
+Assim, o \textit{framework} proposto, além de avaliar a qualidade do código de uma maneira geral, avalia também a qualidade do código inerente aos testes unitários.
+
