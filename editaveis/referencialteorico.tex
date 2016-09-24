@@ -2,19 +2,29 @@
 
 Primeiramente, é válido ressaltar que o \textit{framework} proposto neste trabalho está voltado para o contexto de desenvolvimento que adota metodologias ágeis. Adicionalmente, as atividades constituintes do \textit{framework} visam o alinhamento com os aspectos centrais e complementares propostos pela Verificação de \textit{Software}, que são as inspeções de código e implementação de testes, mais especificamente testes unitários para o âmbito do \textit{framework} concebido neste trabalho.
 
-Neste capítulo, busca-se apresentar conceitos que fundamentam a concepção do \textit{framework}. Na seção 2.1, é possível contemplar uma breve explanação com relação à Verificação de \textit{Software}. Já na seção 2.2, serão explanados aspectos principais inerentes às insepções de código. Por fim, ao longo da seção 2.3, serão apresentados definições elucidativas para a atividade de teste a partir de uma perspectiva genérica, aprofundando paulatinamente a análise para aspectos pontuais dos testes unitários.
+Neste capítulo, busca-se apresentar conceitos que fundamentam a concepção do \textit{framework}. Na seção 2.1, é possível contemplar uma breve explanação com relação à Verificação de \textit{Software}. Já na seção 2.2, serão explanados aspectos principais inerentes às inspeções. Ao longo da seção 2.3, serão apresentados definições elucidativas para a atividade de teste a partir de uma perspectiva genérica, aprofundando paulatinamente a análise para aspectos pontuais dos testes unitários. Por fim, na seção 2.4, haverá uma apresentação mais detalhada acerca da perspectiva da VBSE.
 
 Os conceitos aqui apresentados são importantes pelo fato de demonstrarem plenamente o propósito das atividades existentes no \textit{framework}.
 
 \section{Verificação de \textit{Software}}
 
-//TO DO
+A verificação é uma das principais disciplinas da Engenharia de \textit{Software}. A verificação, segundo definição do IEEE (\textit{Institute of Electrical and Eletronics Engineers}), caracteriza-se como o processo de avaliar um sistema, produto ou componente para determinar se os resultados de um passo do respectivo processo de desenvolvimento satisfazem as condições impostas no início do passo. Pelo CMMI (\textit{Capability Maturity Model Integration}), a verificação é tida como uma confirmação de que produtos de trabalho refletem corretamente os requisitos especificados.
 
-\section{Inspeção de Código}
+As verificações incluem análises estáticas, testes de desenvolvimento (testes de unidade e integração) e revisões \cite{paulafilho}. Nesse âmbito, uma verificação efetiva aumenta a visibilidade do processo de desenvolvimento e reduz os riscos do projeto \cite{verificacao1}.
+
+Como mencionado em seções anteriores, o presente trabalho propõe um \textit{framework} que agrega práticas da verificação de \textit{software}, especificamente implementação de testes unitários e inspeções de código. Assim sendo, como a verificação evidencia a sistemática de desenvolvimento do produto, naturalmente, esta favorece a agregação de valor ao produto, alinhando as atividades técnicas da execução do projeto com a missão do mesmo.
+
+\section{Inspeção}
+
+Segundo a definição do Glossário do IEEE, uma inspeção (\textit{inspection}) caracteriza-se como um exame visual de produtos de trabalho para detectar e identificar anomalias. Adicionalmente, é possível contemplar uma definição ainda mais detalhada que consta na norma IEEE-1028, que acrescenta o fato de que o exame realizado na atividade de inspeção inclui, ao identificar anomalias, erros e desvios em relação a padrões e especificações.
+
+A inspeção é o tipo mais formal de revisão. O objetivo principal é a identificação e remoção de defeitos \cite{paulafilho}. Nesse contexto, é válido ressaltar que o IEEE define anomalia como qualquer coisa observada na documentação ou operação de um produto de \textit{software} que se desvie de expectativas baseadas em outros produtos já verificados, ou em materiais de referência. Adicionalmente, defeito, segundo o PMBOK (\textit{Project Management Body of Knowledge}) é uma imperfeição ou deficiência em um componente do projeto na qual esse componente não atende aos seus requisitos ou especificações, fazendo-se necessário o reparo ou substituição.
+
+O \textit{framework} proposto neste trabalho centraliza a prática da inspeção no exame do código fonte do produto de software, incluindo o código dos testes unitários implementados.
 
 \section{Teste de \textit{Software}}
 
-Segundo o IEEE (\textit{Institute of Electrical and Eletronics Engineers}), um teste é uma atividade na qual um produto, sistema ou componente é executado sob condições especificadas. A partir dessa execução controlada, há uma observação e registro dos resultados e também, avaliação de um ou mais aspectos.
+Segundo o IEEE, um teste é uma atividade na qual um produto, sistema ou componente é executado sob condições especificadas. A partir dessa execução controlada, há uma observação e registro dos resultados e também, avaliação de um ou mais aspectos.
 
 Mediante essa abordagem, os testes são mais do que apenas um meio de detecção e correção de erros, mas se caracterizam também como indicadores da qualidade do produto. Em geral, quanto maior o número de defeitos detectados em um \textit{software}, infere-se que o número de defeitos não detectados também é grande.
 
@@ -42,3 +52,14 @@ Como mencionado em seções anteriores, a corrente pesquisa foca a vertente dos 
 
 Assim, o \textit{framework} proposto, além de avaliar a qualidade do código de uma maneira geral, avalia também a qualidade do código inerente aos testes unitários.
 
+\section {Engenharia de \textit{Software} Baseada em Valor}
+
+O objetivo da Engenharia de \textit{Software} é criar produtos, serviços e processos que agreguem valor \cite{vbse1}. Mas, o que é valor de fato? O dicionário moderno de sociologia define valor como o princípio generalizado de comportamento em que os membros de um grupo sentem um forte compromisso em prover padrão para julgar atos e objetivos específicos. A definição é aplicável nas mais diversas áreas, inclusive no desenvolvimento de \textit{software}.
+
+O primeiro texto significativo que trouxe considerações sobre valor no âmbito do desenvolvimento de \textit{software} foi de Boehm, em 1981. Como mencionado na Introdução, a VBSE traz considerações de valor para o primeiro plano. Caso as perspectivas de valor não sejam explicitadas e conciliadas entre os envolvidos em um projeto, todos perdem ao final.
+
+O produto de \textit{software} reconhecidamente possui características internas e externas particulares, sendo portador uma natureza altamente flexível e volátil. Nesse sentido, há uma forte dependência da colaboração entre pessoas, com níveis de criatividade e qualificações diferenciadas. Faz-se necessárias então, uma construção e gestão mais rigorosas.
+
+Assim, pode-se exemplificar a relação entre VBSE e a atividade de teste de \textit{software}, por exemplo. O desafio em teste baseado em valor consiste em integrar as duas dimensões (a interna, que abrange custos e benefícios do teste e a externa, que foca nas oportunidades e riscos). Adicionalmente, deve-se  alinhar o processo interno de teste com os objetivos de valor oriundos dos clientes e mercado \cite{vbse1}.
+
+Considerando este raciocínio, não é diferente no caso da inspeção de código. As atividades mais técnicas, internas de um projeto de desenvolvimento de \textit{software}, devem estar alinhadas à missão do projeto como um todo, corroborando expectativas inerentes às proposições de valor externalizadas pelos clientes.
