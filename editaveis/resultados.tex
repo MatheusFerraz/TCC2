@@ -1,1 +1,69 @@
 \chapter{Resultados}
+
+Nesta seção, serão apresentados os principais resultados obtidos a partir da realização da pesquisa bibliográfica e também, a partir da revisão sistemática. Inicialmente, serão apresentados os resultados obtidos com a revisão sistemática inerente à temática qualidade dos testes unitários. Posteriormente, serão apresentados insumos bibliográficos para o arcabouço inerente às inspeções de código e à VBSE.
+
+\section{Revisão Sistemática - Qualidade dos Testes Unitários}
+
+A partir da leitura dos arquivos selecionados, foi possível contemplar abordagens quanto:
+
+\begin{itemize}
+	\item Ao pensamento que os desenvolvedores devem ter quando se discute implementação de testes unitários.
+	\item À existência de práticas e técnicas que devem estar presentes no processo de desenvolvimento de \textit{software} para que os testes unitários sejam efetivos e de qualidade.
+	\item Às ferramentas que apoiam a construção de testes unitários.
+\end{itemize}
+
+\subsection{Abordagens de pensamento para elaboração de testes unitários}
+
+Primeiramente, deve-se notar que a cultura existente no desenvolvimento de \textit{software} quanto à elaboração de testes unitários deve mudar. Esta é uma atividade fortemente negligenciada na indústria de desenvolvimento. Assim, instituições de prestígio na comunidade de desenvolvimento científico e tecnológico tem apresentado perspectivas importantes a serem consideradas com relação à atividade de implementação de testes unitários. A exemplo disso, tem-se a NASA (\textit{National Aeronautics and Space Administration}), que por desenvolver sistemas críticos, concebeu um pensamento extremamente diferenciado e que atribui a devida importância às atividades de verificação, mais especificamente, a implementação de testes.
+
+É importante destacar que testes unitários são parte integral de um produto e assim, as diferentes versões dos testes unitários também devem ser controladas e gerenciadas como qualquer outra parte do código fonte do produto \cite{nasa}. Nesse sentido, artefatos de teste também são entregáveis. Portanto, os testes unitários bem como os \textit{stubs} e os resultados da execução destes podem ser considerados entregáveis para o cliente como uma maneira de relatar a qualidade presente na construção do produto.
+
+Adicionalmente, as assertivas utilizadas em testes unitários emitem alertas aos desenvolvedores com relação à qualidade do código como um todo, sendo evidenciados aspectos da complexidade ciclomática, número exarcebado de linhas de código em um módulo e invocações de métodos \cite{asserts}.
+
+Considerando as colocações feitas anteriormente, tem-se um alinhamento entre atividades técnicas e a missão de um projeto, o que é fortemente ministrado pela VBSE.
+
+\subsection{Práticas e técnicas para elaboração de testes unitários}
+
+Além das abordagens voltadas para o pensamento dos desenvolvedores citadas anteriormente, é importante evidenciar práticas e técnicas que podem e devem ser empregadas para elaboração de testes unitários mais concisos \cite{nasa}. São elas:
+
+\begin{itemize}
+	\item Deve-se criar muitos métodos de teste pequenos ao invés de se criar poucos métodos de teste grandes.
+	\item Código de teste deve possuir convenções de nomenclatura.
+	\item A ordem de execução dos testes não deve ser fator decisivo.
+	\item Testes devem ser auto verificáveis.
+	\item A estrutura hierárquica dos testes unitários facilita a compreensão destes.
+	\item Deve-se criar estratégias para testar funções mais internas.
+	\item \textit{Stubs} devem ser simples e pequenos.
+	\item \textit{Stubs} não devem depender de outros \textit{Stubs} que simulam comportamentos de outros módulos.
+	\item A arquitetura do \textit{software} deve comportar \textit{stubs}.
+	\item A arquitetura do \textit{software} deve abstrair aspectos pertinentes ao \textit{hardware} e ao sistema operacional.
+	\item Utilização de ferramentas de análise de cobertura auxiliam a desenvolver novos cenários de teste.
+	\item Gráficos e métricas são úteis para analisar a qualidade de testes.
+\end{itemize}
+
+É válido ressaltar que as práticas e técnicas apresentadas anteriormente foram derivadas a partir do sucesso contemplado na atividade de implementação de testes unitários promovida pela equipe da NASA.
+
+Outro aspecto do ponto de vista técnico que deve ser verificado em testes unitários é o quesito adequação \cite{adequacao}. Dentro desta temática, é válido ressaltar os quesitos que os testes unitários precisam atender em termos de noção de adequação:
+
+\begin{itemize}
+	\item Cobertura de linha, pois espera-se que os métodos de teste unitário elaborados para testar uma determinada unidade exercitem todas as linhas de código da unidade sob teste.
+	\item Cobertura de caminho (\textit{path}), pois espera-se que os métodos de teste unitário elaborados exercitem minimamente uma vez cada caminho contemplado na unidade sob teste. Este tipo de cobertura é tratado quando se tem pontos de decisão no código da unidade sob teste.
+\end{itemize}
+
+\subsection{Utilização de ferramentas de apoio para elaboração de testes unitários}
+
+Outro aspecto importante na construção e verificação da qualidade dos testes unitários é o uso de ferramentas de apoio \cite{feedback}.
+
+Primeiramente, para que os testes unitários sejam eficazes na identificação de comportamento inadequado de uma determinada unidade, os métodos de teste unitário devem abranger o tanto quanto possível o código do sistema, conforme comentado anteriormente sobre a adequação centralizada nas coberturas de linha e de caminho. Em segundo lugar, os desenvolvedores precisam executar os métodos de teste unitário tão frequentemente quanto possível e assim, a execução deve ser automatizada e rápida.
+
+Existem diversos \textit{frameworks} para implementação de testes unitários para as mais variadas linguagens de programação. A exemplo disso, tem-se o \textit{JUnit} para Java, \textit{CUnit} para linguagem C e o \textit{Rspec} para a linguagem Ruby. Todas estas ferramentas provêem suporte para elaboração de métodos de teste unitário bem como para a execução automatizada da suíte de testes construída.
+
+Adicionalmente, é importante visualizar a cobertura de código \cite{cobertura}. Não basta apenas elaborar uma suíte de testes unitários e executá-la de forma automática, também é necessário avaliar o quanto os métodos de teste unitário estão exercitando o código da unidade sob teste.
+
+A partir do uso de ferramentas de análise de cobertura, é possível identificar mais cenários de teste a serem elaborados e assim, a suíte de testes se torna ainda mais eficaz. Todos os aspectos listados até aqui elevam a qualidade do produto e assim, tem-se a entrega de maior valor para o cliente.
+
+\section{Pesquisa Bibliográfica}
+
+\subsection{Inspeção de Código}
+
+\subsection{VBSE - Perspectiva de Proposições de Valor}
