@@ -65,3 +65,31 @@ A partir do uso de ferramentas de análise de cobertura, é possível identifica
 \section{Pesquisa Bibliográfica}
 
 \subsection{Inspeção de Código}
+
+É válido ressaltar que inspeções formais de \textit{software} objetivam a detecção e eliminação de erros em produtos desenvolvidos durante o seu ciclo de desenvolvimento. Nesse sentido, inspeções formais são aplicáveis à qualquer parte do produto de \textit{software}, incluindo requisitos, especificação, \textit{design} e código \cite{inspecao1}.
+
+Segundo \cite{inspecao1}, um \textit{checklist} para inspeção formal de código deve contemplar, dentre outras técnicas, os principais itens:
+
+\begin{itemize}
+	\item \textbf{Retorno de métodos}: Retorno de métodos e/ou rotinas muitas vezes pode provocar a interrupção do fluxo do programa, descontinuidade, corrupção de pilha, estouro de memória ou valor incorreto. Assim, verificando este quesito, é possível constatar se todas as rotinas ou métodos retornam valores de maneira correta.
+
+	\item \textbf{Tratamento de interrupção e regiões críticas}: Esta verificação atesta a manutenção de interrupções pelas rotinas correspondentes e por rotinas que dependem dos serviços de interrupção em regiões críticas. É válido ressaltar que este aspecto deve ser profundamente investigado principalmente quando se trata do desenvolvimento de sistemas críticos. Nesse sentido, a inspeção deve localizar todas as rotinas de interrupção de serviços e rotinas que são chamadas por serviços de interrupção.
+
+	\item \textbf{Controle de \textit{loops}}: Este item verifica os loops para garantir que eles possuem fim (exceto quando intencionalmente nunca terminam), evitando ciclos infinitos no programa.
+
+	\item \textbf{Teste de I/O}: Este quesito verifica o I/O de rotinas importantes, especialmente àquelas onde a reentrada deve ser prevenida. Entrada e saída de dados em um programa é um aspecto que deve ser bem avaliado, justamente pelo fato de possuir implicações diretas no uso da CPU (analisando a perspectiva de escalonamento dos processos).
+
+	\item \textbf{Controle de fluxo do programa}: Este item verifica se a sequência do programa está correta. A incorreta utilização de estruturas de controle pode resultar em uma execução inesperada, possibilitando situações de risco no funcionamento do \textit{software}.
+
+	\item \textbf{Código inutilizado}: Esta verificação atesta se não há nenhum código entre marcas de comentário e, portanto, não utilizado (em geral rotinas que serviram para o desenvolvimento e que não são mais utilizadas). Este fator pode ter influência negativa na manutenção futura do código.
+
+	\item \textbf{Variáveis e constantes}: O uso de variáveis e constantes é outro aspecto que deve ser verificado de forma concisa. Deve-se atentar para a correta atribuição dos valores, bem como sua atualização.
+
+	\item \textbf{Comentários de código}: Deve-se verificar se os comentários de fato melhoram a compreensão do código, melhorando a manutenibilidade. Adicionalmente, é importante destacar que os comentários não devem ser ambíguos, podendo resultar em interpretações incorretas.
+
+	\item \textbf{Legibilidade de código}: A legibilidade é fundamental para a manutenção do código. Quanto menor a complexidade na escrita do código, menor o esforço na compreensão.
+
+	\item \textbf{Diretivas ao pré-processador}: Deve-se evitar a utilização indiscriminada das diretivas ao pré-processador no código fonte. Este aspecto evita erros durante a manutenção.
+
+	\item \textbf{Otimização de código}: Deve-se evitar deterinadas otimizações durante a compilação, o que pode gerar um código objeto de maneira inesperada. Em geral, linguagens de programação de alto nível têm aspectos ambíguos que podendo levar a uma dupla interpretação dependendo do nível de otimização selecionado.
+\end{itemize}
