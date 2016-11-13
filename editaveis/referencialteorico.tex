@@ -2,7 +2,7 @@
 
 Primeiramente, é válido ressaltar que o \textit{framework} proposto neste trabalho está voltado para o contexto de desenvolvimento que adota metodologias ágeis. Adicionalmente, as atividades constituintes do \textit{framework} visam o alinhamento com os aspectos centrais e complementares propostos pela Verificação de \textit{Software}, que são as inspeções de código e implementação de testes, mais especificamente testes unitários para o âmbito do \textit{framework} concebido neste trabalho.
 
-Neste capítulo, busca-se apresentar conceitos que fundamentam a concepção do \textit{framework}. Na seção 2.1, é possível contemplar uma breve explanação com relação à Verificação de \textit{Software}. Já na seção 2.2, serão explanados aspectos principais inerentes às inspeções. Ao longo da seção 2.3, serão apresentados definições elucidativas para a atividade de teste a partir de uma perspectiva genérica, aprofundando paulatinamente a análise para aspectos pontuais dos testes unitários. Por fim, na seção 2.4, haverá uma apresentação mais detalhada acerca da perspectiva da VBSE.
+Neste capítulo, busca-se apresentar conceitos que fundamentam a concepção do \textit{framework}. Na seção 2.1, é possível contemplar uma breve explanação com relação à Verificação de \textit{Software}. Já na seção 2.2, serão explanados aspectos principais inerentes às inspeções, bem como a base para o \textit{checklist} de inspeção de código elaborado para o \textit{framework}. Ao longo da seção 2.3, serão apresentadas definições elucidativas para a atividade de teste a partir de uma perspectiva genérica, aprofundando paulatinamente a análise para aspectos pontuais dos testes unitários, exibindo-se os resultados da revisão sistemática para a elaboração do \textit{checklist} de implementação de testes unitários contido no \textit{framework}. Por fim, na seção 2.4, haverá uma apresentação mais detalhada acerca da perspectiva da VBSE.
 
 Os conceitos aqui apresentados são importantes pelo fato de demonstrarem plenamente o propósito das atividades existentes no \textit{framework}.
 
@@ -19,6 +19,36 @@ Como mencionado em seções anteriores, o presente trabalho propõe um \textit{f
 Segundo a definição do Glossário do IEEE, uma inspeção (\textit{inspection}) caracteriza-se como um exame visual de produtos de trabalho para detectar e identificar anomalias. Adicionalmente, é possível contemplar uma definição ainda mais detalhada que consta na norma IEEE-1028, que acrescenta o fato de que o exame realizado na atividade de inspeção inclui, ao identificar anomalias, erros e desvios em relação a padrões e especificações.
 
 A inspeção é o tipo mais formal de revisão. O objetivo principal é a identificação e remoção de defeitos \cite{paulafilho}. Nesse contexto, é válido ressaltar que o IEEE define anomalia como qualquer coisa observada na documentação ou operação de um produto de \textit{software} que se desvie de expectativas baseadas em outros produtos já verificados, ou em materiais de referência. Adicionalmente, defeito, segundo o PMBOK (\textit{Project Management Body of Knowledge}) é uma imperfeição ou deficiência em um componente do projeto na qual esse componente não atende aos seus requisitos ou especificações, fazendo-se necessário o reparo ou substituição.
+
+\subsection{Itens da Inspeção de Código}
+
+É válido ressaltar que inspeções formais de \textit{software} objetivam a detecção e eliminação de erros em produtos desenvolvidos durante o seu ciclo de desenvolvimento. Nesse sentido, inspeções formais são aplicáveis à qualquer parte do produto de \textit{software}, incluindo requisitos, especificação, \textit{design} e código \cite{inspecao1}.
+
+Segundo \cite{inspecao1}, um \textit{checklist} para inspeção formal de código deve contemplar, dentre outras técnicas, os principais itens:
+
+\begin{itemize}
+	\item \textbf{Retorno de métodos}: Retorno de métodos e/ou rotinas muitas vezes pode provocar a interrupção do fluxo do programa, descontinuidade, corrupção de pilha, estouro de memória ou valor incorreto. Assim, verificando este quesito, é possível constatar se todas as rotinas ou métodos retornam valores de maneira correta.
+
+	\item \textbf{Tratamento de interrupção e regiões críticas}: Esta verificação atesta a manutenção de interrupções pelas rotinas correspondentes e por rotinas que dependem dos serviços de interrupção em regiões críticas. É válido ressaltar que este aspecto deve ser profundamente investigado principalmente quando se trata do desenvolvimento de sistemas críticos. Nesse sentido, a inspeção deve localizar todas as rotinas de interrupção de serviços e rotinas que são chamadas por serviços de interrupção.
+
+	\item \textbf{Controle de \textit{loops}}: Este item verifica os loops para garantir que eles possuem fim (exceto quando intencionalmente nunca terminam), evitando ciclos infinitos no programa.
+
+	\item \textbf{Teste de I/O}: Este quesito verifica o I/O de rotinas importantes, especialmente àquelas onde a reentrada deve ser prevenida. Entrada e saída de dados em um programa é um aspecto que deve ser bem avaliado, justamente pelo fato de possuir implicações diretas no uso da CPU (analisando a perspectiva de escalonamento dos processos).
+
+	\item \textbf{Controle de fluxo do programa}: Este item verifica se a sequência do programa está correta. A incorreta utilização de estruturas de controle pode resultar em uma execução inesperada, possibilitando situações de risco no funcionamento do \textit{software}.
+
+	\item \textbf{Código inutilizado}: Esta verificação atesta se não há nenhum código entre marcas de comentário e, portanto, não utilizado (em geral rotinas que serviram para o desenvolvimento e que não são mais utilizadas). Este fator pode ter influência negativa na manutenção futura do código.
+
+	\item \textbf{Variáveis e constantes}: O uso de variáveis e constantes é outro aspecto que deve ser verificado de forma concisa. Deve-se atentar para a correta atribuição dos valores, bem como sua atualização.
+
+	\item \textbf{Comentários de código}: Deve-se verificar se os comentários de fato melhoram a compreensão do código, melhorando a manutenibilidade. Adicionalmente, é importante destacar que os comentários não devem ser ambíguos, podendo resultar em interpretações incorretas.
+
+	\item \textbf{Legibilidade de código}: A legibilidade é fundamental para a manutenção do código. Quanto menor a complexidade na escrita do código, menor o esforço na compreensão.
+
+	\item \textbf{Diretivas ao pré-processador}: Deve-se evitar a utilização indiscriminada das diretivas ao pré-processador no código fonte. Este aspecto evita erros durante a manutenção.
+
+	\item \textbf{Otimização de código}: Deve-se evitar deterinadas otimizações durante a compilação, o que pode gerar um código objeto de maneira inesperada. Em geral, linguagens de programação de alto nível têm aspectos ambíguos que podendo levar a uma dupla interpretação dependendo do nível de otimização selecionado.
+\end{itemize}
 
 O \textit{framework} proposto neste trabalho centraliza a prática da inspeção no exame do código fonte do produto de software, incluindo o código dos testes unitários implementados.
 
@@ -51,6 +81,66 @@ A elaboração de \textit{drivers} e \textit{stubs} é importante pelo fato de q
 Como mencionado em seções anteriores, a corrente pesquisa foca a vertente dos testes em nível unitário. Sabe-se que os testes unitários, como qualquer outro teste e com suas particularidades, auxiliam na detecção de defeitos e indicam qualidade do \textit{software}. Contudo, também é necessário avaliar se os testes unitários são efetivos e se são portadores de qualidade, ou seja, se foram bem elaborados.
 
 Assim, o \textit{framework} proposto, além de avaliar a qualidade do código de uma maneira geral, avalia também a qualidade do código inerente aos testes unitários.
+
+\subsection{Revisão Sistemática - Qualidade dos Testes Unitários}
+
+A partir da leitura dos arquivos selecionados, foi possível contemplar abordagens quanto:
+
+\begin{itemize}
+	\item Ao pensamento que os desenvolvedores devem ter quando se discute implementação de testes unitários.
+	\item À existência de práticas e técnicas que devem estar presentes no processo de desenvolvimento de \textit{software} para que os testes unitários sejam efetivos e de qualidade.
+	\item Às ferramentas que apoiam a construção de testes unitários.
+\end{itemize}
+
+\subsection{Abordagens de pensamento para elaboração de testes unitários}
+
+Primeiramente, deve-se notar que a cultura existente no desenvolvimento de \textit{software} quanto à elaboração de testes unitários deve mudar. Esta é uma atividade fortemente negligenciada na indústria de desenvolvimento. Assim, instituições de prestígio na comunidade de desenvolvimento científico e tecnológico tem apresentado perspectivas importantes a serem consideradas com relação à atividade de implementação de testes unitários. A exemplo disso, tem-se a NASA (\textit{National Aeronautics and Space Administration}), que por desenvolver sistemas críticos, concebeu um pensamento extremamente diferenciado e que atribui a devida importância às atividades de verificação, mais especificamente, a implementação de testes.
+
+É importante destacar que testes unitários são parte integral de um produto e assim, as diferentes versões dos testes unitários também devem ser controladas e gerenciadas como qualquer outra parte do código fonte do produto \cite{nasa}. Nesse sentido, artefatos de teste também são entregáveis. Portanto, os testes unitários bem como os \textit{stubs} e os resultados da execução destes podem ser considerados entregáveis para o cliente como uma maneira de relatar a qualidade presente na construção do produto.
+
+Adicionalmente, as assertivas utilizadas em testes unitários emitem alertas aos desenvolvedores com relação à qualidade do código como um todo, sendo evidenciados aspectos da complexidade ciclomática, número exarcebado de linhas de código em um módulo e invocações de métodos \cite{asserts}.
+
+Considerando as colocações feitas anteriormente, tem-se um alinhamento entre atividades técnicas e a missão de um projeto, o que é fortemente ministrado pela VBSE.
+
+\subsection{Práticas e técnicas para elaboração de testes unitários}
+
+Além das abordagens voltadas para o pensamento dos desenvolvedores citadas anteriormente, é importante evidenciar práticas e técnicas que podem e devem ser empregadas para elaboração de testes unitários mais concisos \cite{nasa}. São elas:
+
+\begin{itemize}
+	\item Deve-se criar muitos métodos de teste pequenos ao invés de se criar poucos métodos de teste grandes.
+	\item Código de teste deve possuir convenções de nomenclatura.
+	\item A ordem de execução dos testes não deve ser fator decisivo.
+	\item Testes devem ser auto verificáveis.
+	\item A estrutura hierárquica dos testes unitários facilita a compreensão destes.
+	\item Deve-se criar estratégias para testar funções mais internas.
+	\item \textit{Stubs} devem ser simples e pequenos.
+	\item \textit{Stubs} não devem depender de outros \textit{Stubs} que simulam comportamentos de outros módulos.
+	\item A arquitetura do \textit{software} deve comportar \textit{stubs}.
+	\item A arquitetura do \textit{software} deve abstrair aspectos pertinentes ao \textit{hardware} e ao sistema operacional.
+	\item Utilização de ferramentas de análise de cobertura auxiliam a desenvolver novos cenários de teste.
+	\item Gráficos e métricas são úteis para analisar a qualidade de testes.
+\end{itemize}
+
+É válido ressaltar que as práticas e técnicas apresentadas anteriormente foram derivadas a partir do sucesso contemplado na atividade de implementação de testes unitários promovida pela equipe da NASA.
+
+Outro aspecto do ponto de vista técnico que deve ser verificado em testes unitários é o quesito adequação \cite{adequacao}. Dentro desta temática, é válido ressaltar os quesitos que os testes unitários precisam atender em termos de noção de adequação:
+
+\begin{itemize}
+	\item Cobertura de linha, pois espera-se que os métodos de teste unitário elaborados para testar uma determinada unidade exercitem todas as linhas de código da unidade sob teste.
+	\item Cobertura de caminho (\textit{path}), pois espera-se que os métodos de teste unitário elaborados exercitem minimamente uma vez cada caminho contemplado na unidade sob teste. Este tipo de cobertura é tratado quando se tem pontos de decisão no código da unidade sob teste.
+\end{itemize}
+
+\subsection{Utilização de ferramentas de apoio para elaboração de testes unitários}
+
+Outro aspecto importante na construção e verificação da qualidade dos testes unitários é o uso de ferramentas de apoio \cite{feedback}.
+
+Primeiramente, para que os testes unitários sejam eficazes na identificação de comportamento inadequado de uma determinada unidade, os métodos de teste unitário devem abranger o tanto quanto possível o código do sistema, conforme comentado anteriormente sobre a adequação centralizada nas coberturas de linha e de caminho. Em segundo lugar, os desenvolvedores precisam executar os métodos de teste unitário tão frequentemente quanto possível e assim, a execução deve ser automatizada e rápida.
+
+Existem diversos \textit{frameworks} para implementação de testes unitários para as mais variadas linguagens de programação. A exemplo disso, tem-se o \textit{JUnit} para Java, \textit{CUnit} para linguagem C e o \textit{Rspec} para a linguagem Ruby. Todas estas ferramentas provêem suporte para elaboração de métodos de teste unitário bem como para a execução automatizada da suíte de testes construída.
+
+Adicionalmente, é importante visualizar a cobertura de código \cite{cobertura}. Não basta apenas elaborar uma suíte de testes unitários e executá-la de forma automática, também é necessário avaliar o quanto os métodos de teste unitário estão exercitando o código da unidade sob teste.
+
+A partir do uso de ferramentas de análise de cobertura, é possível identificar mais cenários de teste a serem elaborados e assim, a suíte de testes se torna ainda mais eficaz. Todos os aspectos listados até aqui elevam a qualidade do produto e assim, tem-se a entrega de maior valor para o cliente.
 
 \section {Engenharia de \textit{Software} Baseada em Valor}
 
