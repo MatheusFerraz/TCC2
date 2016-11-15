@@ -1,19 +1,47 @@
-\chapter{\textit{Framework} de Avaliação de Código}
+\chapter{\textit{Framework} de Avaliação da Qualidade do Código}
 
 Este capítulo apresenta, inicialmente, os \textit{checklists} de implementação de testes unitários e inspeção de código obtidos a partir do referencial teórico. Por fim, apresenta-se o detalhamento das atividades do \textit{framework}.
 
 \section{\textit{Checklist} para Implementação de Testes Unitários}
 
+O \textit{checklist} de implementação de testes unitários é composto dos seguintes itens, conforme a seção 2.3:
+
+\begin{enumerate}
+	\item Criar métodos de teste pequenos.
+	\item Criar convenções de nomenclatura para o código de teste.
+	\item Criar métodos de teste cuja ordem de execução não seja determinante para êxito da suíte.
+	\item Criar testes auto verificáveis.
+	\item Estruturar o código de teste de forma hierárquica, para favorecer a compreensão.
+	\item Criar testes para funções mais internas do módulo sob teste.
+	\item Criar \textit{stubs} simples e pequenos.
+	\item Criar \textit{stubs} que sejam independentes de outros \textit{stubs} que simulam comportamentos de outros módulos.
+	\item Conceber uma arquitetura de \textit{software} que comporte \textit{stubs}.
+	\item Utilizar ferramentas de análise de cobertura de código.
+	\item Elaborar métodos de teste que sejam capazes de exercitar todas as linhas e caminhos dos métodos da unidade sob teste.
+	\item Analisar \textit{performance} da suíte de testes ao ser executada, efetuando refatorações se necessário.
+\end{enumerate}
+
 \section{\textit{Checklist} para Inspeção de Código}
+
+O \textit{checklist} para inspeção de código é composto dos seguintes itens, conforme seção 2.2:
+
+\begin{enumerate}
+	\item Verificar o que está sendo retornado em todos os métodos.
+	\item Verificar o tratamento de interrupções e gerenciamento de regiões críticas.
+	\item Verificar o comportamento de todos os trechos de código que contenham estruturas de repetição (\textit{for}, \textit{while} etc.).
+	\item Verificar como o fluxo de I/O está sendo tratado nos métodos.
+	\item Verificar fluxo do programa, analisando as estruturas de controle(\textit{if}, \textit{else} etc.).
+	\item Verificar trechos de código que estejam inutilizados.
+	\item Verificar atribuições de valores às contantes e às variáveis.
+	\item Verificar comentários do código.
+	\item Verificar legibilidade do código.
+	\item Verificar utilização de diretivas ao pré-processador.
+	\item Verificar otimizações realizadas para a compilação.
+\end{enumerate}
 
 \section{Detalhamento do \textit{Framework}}
 
-Com base em todos os conceitos assimilados a partir da realização da revisão sistemática de literatura e também, da pesquisa bibliográfica, foi possível conceber um grupo de atividades que em sua totalidade compõem o \textit{framework} de avaliação de código. A figura a seguir ilustra o macroprocesso do \textit{framework} proposto.
-
-\begin{figure}[h]
-\includegraphics[width=\textwidth]{figuras/macroprocesso.jpg}
-\caption{Macroprocesso - \textit{Framework de Avaliação de Código}}
-\end{figure}
+Com base em todos os conceitos assimilados a partir da realização da revisão sistemática de literatura e também, da pesquisa bibliográfica, foi possível conceber um grupo de atividades que em sua totalidade compõem o \textit{framework} de avaliação de código.
 
 Iniciando a descrição das atividades pelo macroprocesso, tem-se:
 
@@ -46,6 +74,13 @@ Quanto à descrição das atividades constituintes do subprocesso Executar Sprin
 
 	\item \textbf{Documentar resultados:} Além da anotação das estatísticas coletadas durante a execução dos testes, será documentado o resultado da inspeção, explicitando para cada módulo avaliado o grau de qualidade. Em caso de detecção de erros e defeitos severos, o módulo não será aprovado, ou seja, considerado finalizado e assim, deverá ser feito o aperfeiçoamento do mesmo na sprint subsequente.
 \end{itemize}
+
+A figura a seguir ilustra o macroprocesso do \textit{framework} proposto.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/macroprocesso.jpg}
+\caption{Macroprocesso - \textit{Framework de Avaliação de Código}}
+\end{figure}
 
 A seguir, tem-se uma figura do subprocesso Executar Sprint (centralizando a atenção apenas nas atividades agregadas pelo \textit{framework}).
 
