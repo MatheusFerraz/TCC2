@@ -29,17 +29,13 @@ Dentre as metodologias concebidas para resolver os problemas enfrentados no dese
 
 Intrínseco à metodologia de desenvolvimento, tem-se as práticas de verificação de \textit{software}. Estas, quando corretamente aplicadas, resolvem boa parte dos problemas identificados no desenvolvimento de \textit{software} citados anteriormente.
 
-Assim, as empresas, para fazerem uso conjunto das práticas de verificação e validação de \textit{software}, precisam deter uma metodologia de desenvolvimento bem definida, pois esta apresenta forte impacto sobre a qualidade do produto de \textit{software} construído. Contudo, durante a concepção desta metodologia de desenvolvimento, muitas organizações não conseguem abstrair as práticas mais básicas e extremamente necessárias para a construção do produto e acabam por negligenciar determinadas atividades. A exemplo dessa afirmação, tem-se a negligência que se pode contemplar em atividades de implementação e execução de testes e também, nas inspeções de código. Para atender aos prazos, muitas equipes de projeto decidem protelar essas atividades, tornando a qualidade do produto inferior ao que se poderia obter. Adicionalmente, em muitos casos, as atividades técnicas como as citadas anteriormente não estão alinhadas plenamente aos interesses dos clientes, favorecendo a entrega de um produto de menor valor agregado.
+Para as empresas fazerem uso conjunto das práticas de verificação e validação de software é necessário que haja uma estratégia de desenvolvimento que favoreça a aplicação de tais práticas. Contudo, durante a concepção desta metodologia de desenvolvimento, muitas organizações não conseguem abstrair as práticas mais básicas e extremamente necessárias para a construção do produto e acabam por negligenciar determinadas atividades. A exemplo dessa afirmação, tem-se a negligência que se pode contemplar em atividades de implementação e execução de testes e também, nas inspeções de código \cite{cemkaner}. Para atender aos prazos, muitas equipes de projeto decidem protelar essas atividades, tornando a qualidade do produto inferior ao que se poderia obter. Adicionalmente, em muitos casos, as atividades técnicas como as citadas anteriormente não estão alinhadas plenamente aos interesses dos clientes, favorecendo a entrega de um produto de menor valor agregado \cite{vbse2}.
 
-Adotar uma metodologia de desenvolvimento perfeitamente adequada para as necessidades da organização e que também atenda de forma concisa aos interesses de todos os envolvidos no projeto não é uma tarefa fácil. Porém, a perspectiva de valor fornece uma boa maneira de olhar para o processo de desenvolvimento do produto.
-
-É válido ressaltar que os envolvidos em um projeto de desenvolvimento de \textit{software} (clientes, analistas de negócio, gerentes de projetos, arquitetos de \textit{software}, desenvolvedores etc) devem possuir um melhor entendimento das implicações provenientes das decisões efetuadas sobre o produto \cite{vbse1}.
-
-Este trabalho possui foco em metodologias ágeis, mais especificamente o \textit{Scrum} e nas práticas mais básicas e complementares da verificação de \textit{software}, sendo elas a implementação de testes unitários e inspeções de código. O \textit{framework} aqui elaborado, reúne essas práticas, a partir de uma ótica de análise de efetividade das mesmas, com atividades do \textit{Scrum}. Naturalmente, exercendo um controle maior sobre a escrita do código que concretiza o \textit{software}, alinhando esta atividade ao propósito do projeto, será possível obter produtos de maior qualidade.
+Adotar uma metodologia de desenvolvimento perfeitamente adequada para as necessidades da organização e que também atenda de forma concisa aos interesses de todos os envolvidos no projeto não é uma tarefa fácil. Porém, a perspectiva da Engenharia de \textit{Software} Baseada em Valor fornece uma boa maneira de olhar para o processo de desenvolvimento do produto. É válido ressaltar que os envolvidos em um projeto de desenvolvimento de \textit{software} (clientes, analistas de negócio, gerentes de projetos, arquitetos de \textit{software}, desenvolvedores etc) devem possuir um melhor entendimento das implicações provenientes das decisões efetuadas sobre o produto \cite{vbse1}.
 
 \section{Problema}
 
-Na indústria de desenvolvimento de \textit{software}, em geral, há baixo nível de aplicação das principais práticas propostas pela Verificação de \textit{Software} para a construção de produtos de maior qualidade. Na grande maioria dos projetos da indústria de desenvolvimento, essas práticas são negligenciadas, caracterizando-se como atividades de menor importância.	
+Na indústria de desenvolvimento de \textit{software}, em geral, há baixo nível de aplicação das principais práticas propostas pela Verificação de \textit{Software} para a construção de produtos de maior qualidade. Na grande maioria dos projetos da indústria de desenvolvimento, essas práticas são negligenciadas, caracterizando-se como atividades de menor importância \cite{cemkaner}.
 
 Adicionalmente, outro quesito que deve ser ressaltado é que as concepções dos clientes de negócio não são concisamente levadas em conta no momento da execução de atividades mais técnicas como as citadas anteriormente. Para exemplificar esta afirmação, basta analisar o que ocorre durante a elaboração e execução de testes para o sistema que está sendo construído. Testes, muitas vezes não estão organizados para maximizar o valor de negócio e também, não estão alinhados com a missão do projeto \cite{vbse2}.
 
@@ -61,6 +57,8 @@ Outro quesito que deve ser evidenciado é que devido às limitações de orçame
 
 O objetivo geral deste trabalho é propor um conjunto de atividades, práticas e ferramentas que favoreçam as atividades de inspeção e elaboração de testes unitários, levando em consideração conceitos da VBSE. Por meio deste conjunto, busca-se alcançar bons níveis de manutenibilidade de código no contexto de desenvolvimento ágil.
 
+Este trabalho, como mencionado, possui foco em metodologias ágeis, mais especificamente no \textit{Scrum} e nas práticas mais básicas e complementares da verificação de \textit{software}, sendo elas a implementação de testes unitários e inspeções de código. O \textit{framework} aqui elaborado, reúne essas práticas, a partir de uma ótica de análise de efetividade das mesmas, com atividades do \textit{Scrum}. Naturalmente, exercendo um controle maior sobre a escrita do código que concretiza o \textit{software}, alinhando esta atividade ao propósito do projeto, será possível obter produtos de maior qualidade.
+
 \subsection{Objetivos Específicos}
 
 Por objetivos específicos para este trabalho, tem-se:
@@ -77,9 +75,7 @@ Por objetivos específicos para este trabalho, tem-se:
 \begin{itemize}
 	\item \textbf{Capítulo 2 - Referencial Teórico}: apresenta conceitos e abordagens relacionados ao tema deste trabalho, explicitando as informações obtidas a partir da pesquisa bibliográfica e também, a partir da realização da revisão sistemática.
 
-	\item \textbf{Capítulo 3 - Metodologia}: especifica a metodologia adotada para a pesquisa e desenvolvimento deste trabalho.
+	\item \textbf{Capítulo 3 - Metodologia}: especifica a metodologia adotada para a pesquisa e desenvolvimento deste trabalho, elencando também como a efetividade do \textit{framework} será avaliada e também, quais instituições serão utilizadas como caso durante a aplicação do \textit{framework}.
 
 	\item \textbf{Capítulo 4 - \textit{Framework} de Avaliação de Código}: apresenta os \textit{checklists} elaborados, correlacionando estes ao detalhamento do \textit{framework} proposto.
-
-	\item \textbf{Capítulo 5 - Atividades Futuras}: descreve como a efetividade do \textit{framework} será avaliada e também, como será feito o cômputo dos resultados. Adicionalmente, tem-se uma breve descrição das instituições que serão utilizadas como caso durante a aplicação do \textit{framework}.
 \end{itemize}

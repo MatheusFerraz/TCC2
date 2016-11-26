@@ -56,9 +56,7 @@ O \textit{framework} proposto neste trabalho centraliza a prática da inspeção
 
 Segundo o IEEE, um teste é uma atividade na qual um produto, sistema ou componente é executado sob condições especificadas. A partir dessa execução controlada, há uma observação e registro dos resultados e também, avaliação de um ou mais aspectos.
 
-Mediante essa abordagem, os testes são mais do que apenas um meio de detecção e correção de erros, mas se caracterizam também como indicadores da qualidade do produto. Em geral, quanto maior o número de defeitos detectados em um \textit{software}, infere-se que o número de defeitos não detectados também é grande.
-
-É importante ressaltar que a contemplação de uma quantidade exorbitante de defeitos em testes indica a provável necessidade de redesenho dos itens testados.
+Mediante essa abordagem, os testes são mais do que apenas um meio de detecção e correção de erros, mas se caracterizam também como indicadores da qualidade do produto. Em geral, quanto maior o número de defeitos detectados em um \textit{software}, infere-se que o número de defeitos não detectados também é grande. É importante ressaltar também que a contemplação de uma quantidade exorbitante de defeitos em testes indica a provável necessidade de redesenho dos itens testados.
 
 Existe uma variedade de tipos de teste nos processos de desenvolvimento de \textit{software}. Contudo, a corrente pesquisa se propõe a avaliar mais prontamente aspectos associados aos testes unitários ou de unidade.
 
@@ -84,7 +82,7 @@ Assim, o \textit{framework} proposto, além de avaliar a qualidade do código de
 
 \subsection{Revisão Sistemática - Qualidade dos Testes Unitários}
 
-A partir da leitura dos arquivos selecionados, foi possível contemplar abordagens quanto:
+A partir da leitura dos artigos selecionados durante a realização da revisão sistemática, foi possível contemplar abordagens quanto:
 
 \begin{itemize}
 	\item Ao pensamento que os desenvolvedores devem ter quando se discute implementação de testes unitários.
@@ -94,17 +92,24 @@ A partir da leitura dos arquivos selecionados, foi possível contemplar abordage
 
 \subsection{Abordagens de pensamento para elaboração de testes unitários}
 
+Com relação às abordagens de pensamento para elaboração de testes unitários, \cite{nasa} e \cite{asserts} trazem duas abordagens fundamentais para a ideologia de desenvolvedores:
+
+\begin{itemize}
+	\item {Testes unitários são parte de um \textit{software}, sendo também entregáveis.}
+	\item {A quantidade de assertivas utilizadas em código de teste unitário favorecem a percepção de aspectos intrínsecos à qualidade de código.}
+\end{itemize}
+
 Primeiramente, deve-se notar que a cultura existente no desenvolvimento de \textit{software} quanto à elaboração de testes unitários deve mudar. Esta é uma atividade fortemente negligenciada na indústria de desenvolvimento. Assim, instituições de prestígio na comunidade de desenvolvimento científico e tecnológico tem apresentado perspectivas importantes a serem consideradas com relação à atividade de implementação de testes unitários. A exemplo disso, tem-se a NASA (\textit{National Aeronautics and Space Administration}), que por desenvolver sistemas críticos, concebeu um pensamento extremamente diferenciado e que atribui a devida importância às atividades de verificação, mais especificamente, a implementação de testes.
 
 É importante destacar que testes unitários são parte integral de um produto e assim, as diferentes versões dos testes unitários também devem ser controladas e gerenciadas como qualquer outra parte do código fonte do produto \cite{nasa}. Nesse sentido, artefatos de teste também são entregáveis. Portanto, os testes unitários bem como os \textit{stubs} e os resultados da execução destes podem ser considerados entregáveis para o cliente como uma maneira de relatar a qualidade presente na construção do produto.
 
 Adicionalmente, as assertivas utilizadas em testes unitários emitem alertas aos desenvolvedores com relação à qualidade do código como um todo, sendo evidenciados aspectos da complexidade ciclomática, número exarcebado de linhas de código em um módulo e invocações de métodos \cite{asserts}.
 
-Considerando as colocações feitas anteriormente, tem-se um alinhamento entre atividades técnicas e a missão de um projeto, o que é fortemente ministrado pela VBSE.
+Considerando as colocações feitas anteriormente, tem-se um alinhamento entre atividades técnicas e a missão de um projeto, o que é fortemente ministrado pela VBSE. Para se obter êxito na construção de um \textit{software}, a prática de implementação de testes unitários deve ser considerada relevante e extremamente significativa.
 
 \subsection{Práticas e técnicas para elaboração de testes unitários}
 
-Além das abordagens voltadas para o pensamento dos desenvolvedores citadas anteriormente, é importante evidenciar práticas e técnicas que podem e devem ser empregadas para elaboração de testes unitários mais concisos \cite{nasa}. São elas:
+Além das abordagens voltadas para o pensamento dos desenvolvedores citadas anteriormente, é importante evidenciar práticas e técnicas que podem e devem ser empregadas para elaboração de testes unitários mais concisos. Segundo \cite{nasa}, são elas:
 
 \begin{itemize}
 	\item Deve-se criar muitos métodos de teste pequenos ao invés de se criar poucos métodos de teste grandes.
@@ -150,7 +155,9 @@ O primeiro texto significativo que trouxe considerações sobre valor no âmbito
 
 Como mencionado na Introdução, a VBSE traz considerações de valor para o primeiro plano. Caso as perspectivas de valor não sejam explicitadas e conciliadas entre os envolvidos em um projeto, todos perdem ao final.
 
-O produto de \textit{software} reconhecidamente possui características internas e externas particulares, sendo portador uma natureza altamente flexível e volátil. Nesse sentido, há uma forte dependência da colaboração entre pessoas, com níveis de criatividade e qualificações diferenciadas. Faz-se necessárias então, uma construção e gestão mais rigorosas.
+O produto de \textit{software} reconhecidamente possui características internas e externas particulares, sendo portador de uma natureza altamente flexível e volátil. Nesse sentido, há uma forte dependência da colaboração entre pessoas, com níveis de criatividade e qualificações diferenciadas. Faz-se necessárias então, uma construção e gestão mais rigorosas.
+
+Para compreender melhor o que a VBSE propõe, pode-se considerar o exemplo da elaboração de um novo \textit{software} para ser utilizado pelos clientes de uma determinada instituição bancária, citado em \cite{vbse1}. Inicialmente, a equipe de negócio do banco explica para a equipe de projeto quais são as funcionalidades que o \textit{software} deverá contemplar e dentre elas, elegem as mais significativas. Neste ponto, a equipe de negócio explicitou suas proposições de valor, ou seja, o que é mais importante para ela. Posteriormente, a equipe de projeto planeja todas as iterações do projeto visando a construção e entrega dos componentes mais críticos do \textit{software} para as primeiras iterações. Assim, caso haja alguma restrição de orçamento ou recursos, as funcionalidades mais importantes já terão sido entregues, levando em consideração que estas também já terão sido efetivamente testadas e inspecionadas. Por fim, caso a equipe de negócio decida solicitar uma nova funcionalidade devido ao fato de uma instituição concorrente ter lançado um \textit{software} que seja portador desta funcionalidade, o planejamento do projeto poderá ser redesenhado, atendendo, novamente, às proposições de valor da equipe de negócio.
 
 Assim, pode-se exemplificar a relação entre VBSE e a atividade de teste de \textit{software}, por exemplo. O desafio em teste baseado em valor consiste em integrar as duas dimensões (a interna, que abrange custos e benefícios do teste e a externa, que foca nas oportunidades e riscos). Adicionalmente, deve-se  alinhar o processo interno de teste com os objetivos de valor oriundos dos clientes e mercado \cite{vbse1}.
 

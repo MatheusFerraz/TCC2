@@ -1,14 +1,15 @@
 \chapter{Metodologia}
 
-A metodologia concebida para a realização deste trabalho foi classificada quanto à sua natureza, abordagem e aos procedimentos técnicos.
+A metodologia concebida para a realização deste trabalho foi classificada quanto à sua natureza, abordagem, objetivos e aos procedimentos técnicos.
 
-Quanto à natureza, a pesquisa possui uma caracterização aplicada, visto que se objetiva gerar conhecimentos de efeito prático e destinados à resolução de problemas específicos. Quanto à abordagem, a pesquisa possui um enfoque qualitativo, devido ao fato de não requerer a utilização de métodos e técnicas estatísticas \cite{metodologia}.
+Quanto à natureza, a pesquisa possui uma caracterização aplicada, visto que se objetiva gerar conhecimentos de efeito prático e destinados à resolução de problemas específicos. Quanto à abordagem, a pesquisa possui um enfoque qualitativo, devido ao fato de não requerer a utilização de métodos e técnicas estatísticas \cite{metodologia}. Quanto aos objetivos, a pesquisa se caracteriza como descritiva, pois pretende definir um \textit{framework}.
 
 Para concretizar a realização do trabalho, os seguintes procedimentos técnicos foram adotados:
 
 \begin{itemize}
 	\item Pesquisa Bibliográfica
 	\item Revisão Sistemática
+	\item Pesquisa-Ação
 \end{itemize}
 
 Pelo fato de o presente trabalho estar centrado na proposição de um \textit{framework} que reúne práticas propostas pela verificação de \textit{software} e integra estas às diretrizes fornecidas pela VBSE, fez-se necessária a seleção de mais de um procedimento técnico de pesquisa para a construção do trabalho.
@@ -17,7 +18,7 @@ O arcabouço teórico inerente à VBSE e às inspeções de código foi obtido a
 
 Para Fonseca (2002), a pesquisa bibliográfica é realizada a partir do levantamento de referências teóricas já analisadas, e publicadas por meios escritos e eletrônicos. A pesquisa bibliográfica possibilita que o pesquisador conheça o que já se estudou sobre a temática.
 
-A revisão sistemática, por sua vez, se estabelece como uma metodologia bem definida para identificar, analisar e interpretar as melhores abordagens e práticas relacionadas à uma determinada questão de pesquisa \cite{sistematica}. Além desses aspectos, é uma metodologia que possibilita uma repetição concisa.
+A revisão sistemática, por sua vez, se estabelece como uma metodologia bem definida para identificar, analisar e interpretar as melhores abordagens e práticas relacionadas a uma determinada questão de pesquisa \cite{sistematica}. Além desses aspectos, é uma metodologia que possibilita uma repetição concisa.
 
 A opção pelo procedimento da revisão sistemática deve-se ao fato de que este trabalho também está voltado para a tentativa de compreender quais tem sido as abordagens empregadas na elaboração de testes unitários e como se tem avaliado a efetividade destes. O \textit{framework}, naturalmente, compreende a prática de elaboração de testes unitários.
 
@@ -26,9 +27,9 @@ Outro aspecto interessante da revisão sistemática é que esta auxilia de manei
 Neste trabalho, para a execução da revisão sistemática, considerou-se a proposta de Kitchenham para a revisão no âmbito da Engenharia de \textit{Software}. A proposta é composta por três fases:
 
 \begin{itemize}
-	\item Planejamento da revisão
-	\item Condução da revisão
-	\item Relato da revisão
+	\item Planejamento da revisão.
+	\item Condução da revisão.
+	\item Relato da revisão.
 \end{itemize}
 
 A fase de planejamento consiste na identificação da necessidade de se desenvolver uma revisão sistemática, bem como elaborar um protocolo de revisão. Logo em seguida, na fase de condução, os objetivos mais pontuais de pesquisa são identificados e, adicionalmente, estudos são selecionados e seus dados são extraídos e analisados. Por fim, na fase de relato, os dados extraídos e analisados na fase anterior são externalisados e elabora-se uma discussão. Maiores detalhes acerca da revisão sistemática executada neste trabalho podem ser encontrados no Apêndice A.
@@ -52,7 +53,7 @@ A figura a seguir ilustra essa parte do plano metodológico.
 \caption{Plano Metodológico - TCC 1}
 \end{figure}
 
-A segunda parte, já vinculada ao TCC 2, envolve outras 3 fases: \textit{Coleta de Dados}; \textit{Análise e Interpretação dos Resultados} e \textit{Divulgação dos Resultados.}.
+A segunda parte, já vinculada ao TCC 2, envolve outras 3 fases: \textit{Coleta de Dados}; \textit{Análise e Interpretação dos Resultados} e \textit{Divulgação dos Resultados}, conforme ilustrado na Figura 2.
 A fase \textit{Coleta de Dados} envolve a aplicação de um procedimento técnico denominado pesquisa-ação. Esse procedimento possibilita que o pesquisador intervenha dentro da problemática, mobilizando os participantes e construindo novos conhecimentos \cite{pesquisa}. Assim, a cada ciclo novos quesitos poderão ser melhor tratados no \textit{framework}.
 
 Na fase \textit{Análise e Interpretação dos Resultados}, todos os dados coletados a partir da utilização do \textit{framework} serão analisados, de forma que todas as percepções possíveis possam ser obtidas. Por fim, na fase \textit{Divulgação dos Resultados}, haverá uma estruturação de todos os dados obtidos e analisados, de forma que possa ser evidenciado a efetividade do uso do \textit{framework}.
@@ -63,3 +64,111 @@ A figura a seguir ilustra a segunda parte do plano metodológico.
 \includegraphics[width=\textwidth]{figuras/planometodologico2.png}
 \caption{Plano Metodológico - TCC 2}
 \end{figure}
+
+\section{Elaboração da Proposta do \textit{Framework}}
+
+A primeira parte do plano metodológico já foi executada durante a realização deste trabalho. Com base no problema identificado e nas informações levantadas por meio da pesquisa bibliográfica e da revisão sistemática, foi possível conceber o \textit{framework} de avaliação da qualidade de código. Adicionalmente, já foi definido como a avaliação do \textit{framework} será feita. As próximas seções descrevem detalhadamente este quesito que, por sua vez, constitui a segunda parte do plano metodológico, a ser executado no TCC 2.
+
+\section{Estratégia de Aplicação do \textit{Framework}}
+
+Antes da incorporação das atividades propostas pelo \textit{framework} à rotina das organizações que serão utilizadas como casos, será feita uma reunião com os principais envolvidos de cada projeto. Assim, serão explicitados todos os aspectos do \textit{framework} e a importância dessas atividades para que haja aumento na qualidade do \textit{software}.
+
+Adicionalmente, será construída uma página na wiki ou até mesmo uma simples página web nos ambientes dos projetos que irá dispor a imagem do processo que constitui o \textit{framework}, bem como o detalhamento deste, de forma que os \textit{stakeholders} dos projetos possam efetuar consultas em caso de dúvidas.
+
+Como mencionado em seção anterior, a pesquisa-ação será o procedimento técnico empregado para analisar o uso do \textit{framework}.
+
+\section{Organizações onde o \textit{Framework} será aplicado}
+
+\subsection{Controladoria Geral do Distrito Federal}
+
+A Controladoria Geral do Distrito Federal (CGDF) teve sua estrutura criada por meio do Decreto nº 36.236, de 1º de janeiro de 2015, pelo Governador Rodrigo Rollemberg. Esta Unidade Gestora possui como missão orientar e controlar a gestão pública, com transparência e participação da sociedade.
+
+Interna à CGDF, há uma coordenação de assuntos tecnológicos, a COTEC, que é responsável por desenvolver e manter sistemas para todas as demais coordenações da CGDF. Além dos sistemas internos, tem-se aplicações que são desenvolvidas por empresas privadas ao governo e entregues à COTEC para serem mantidas.
+
+A equipe da COTEC é pequena, contando com um total de 10 servidores. São 3 servidores na frente de infraestrutura, 3 na frente de administração de banco de dados e apenas 4 na área de desenvolvimento. O \textit{Scrum} e XP foram adotados recentemente na COTEC.
+
+A maior parte dos sistemas desenvolvidos e mantidos pela COTEC são aplicações \textit{Web}, construídas com as linguagens de programação \textit{CSharp} e Java. Adicionalmente, faz-se uso do \textit{framework} \textit{AngularJS} para elaboração da camada de apresentação das aplicações.
+
+Embora já se tenha o mínimo de atividades para controlar o desenvolvimento, a COTEC ainda necessita incorporar uma série de outras práticas. As atividades inerentes à verificação de \textit{software} ainda são incipientes na COTEC, tornando-a um local propício para a aplicação do \textit{framework}.
+
+\subsection{Laboratório Fábrica de \textit{Software} - Campus UnB Gama}
+
+O Laboratório Fábrica de \textit{Software} foi concebido com fins de pesquisa e promoção de excelência no desenvolvimento de \textit{software}. Atualmente, o laboratório já incorpora metodologias ágeis para o desenvolvimento, sendo o \textit{Scrum} e o XP (\textit{Extreme Programming}).
+
+Adicionalmente, o laboratório atua de forma a unir o aprendizado das disciplinas do curso de Engenharia de \textit{Software} do Campus Gama da UnB, e a atuação prática de projetos reais.
+
+O laboratório possui parceria com instituições públicas e privadas, as quais subsidiam pesquisas e projetos utilizando tecnologia \textit{CSharp} e \textit{Android}. Quando necessário, o laboratório também modela processos de negócio utilizando notação BPMN (\textit{Business Process Model and Notation}).
+
+Por se tratar de uma instituição aberta ao âmbito de pesquisa na área de Engenharia de \textit{Software}, o laboratório é um local apropriado para uso e experimentação do \textit{framework}, justamente pelo fato de conciliar interesses práticos do mercado com os fins acadêmicos.
+
+\section{Avaliação da Efetividade do \textit{Framework}}
+
+Para realizar futuramente uma análise da efetividade da aplicação do \textit{framework}, elaborou-se um GQM (\textit{Goal Question Metrics}). A seguir, tem-se uma tabela que resume o objetivo da medição.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Analisar & A efetividade do \textit{framework} \\ 
+\hline
+Com o propósito de & Melhorar \\ 
+\hline
+Com respeito a & Efetividade do \textit{framework} \\ 
+\hline
+Sob o ponto de vista de & \textit{Stakeholders} do projeto \\ 
+\hline
+No contexto de & Aumento da qualidade do \textit{software} \\ 
+\hline
+\end{tabular}
+\caption{Tabela Resumo do Objetivo de Medição}\label{table:1}
+\end{table}
+
+A partir do quadro resumo que descreve o objetivo de medição, foram elaboradas questões a serem respondidas por meio das medições, bem como as métricas associadas às mesmas. A seguir, tem-se a apresentação das questões e métricas.
+
+\begin{itemize}
+	\item \textbf{Questão 1:} A densidade de defeitos diminui ao longo das \textit{sprints}?
+	\subitem Densidade de Defeitos por Unidade do Código
+
+	\item \textbf{Questão 2:} Qual o nível de eficácia dos testes unitários implementados a partir do uso do guia de implementação do \textit{framework}?
+	\subitem Taxa de acertos por linha de código (Métrica fornecida pelas ferramentas de análise de cobertura)
+
+	\item \textbf{Questão 3:} Qual o número de falhas reportados pelos usuários após homologação da \textit{release} entregue?
+	\subitem Número de Falhas
+
+	\item \textbf{Questão 4:} Qual o grau de satisfação dos desenvolvedores ao utilizarem os guias de inspeção e de implementação de testes unitários propostos pelo \textit{framework}?
+	\subitem Índice de Satisfação
+
+	\item \textbf{Questão 5:} Qual o grau de facilidade percebido quando vai ser feita uma manutenção no código?
+	\subitem Índice de Manutenibilidade
+\end{itemize}
+
+A coleta de métricas será realizada ao final de cada \textit{sprint}, exceto o índice de satisfação e também, número de falhas (esta métrica só será coletada ao final das entregas de \textit{release}), de maneira a avaliar os resultados e verificar a efetividade do \textit{framework}. Caso ajustes sejam necessários, as modificações serão feitas e novamente, todo o ciclo de atividades será executado na \textit{sprint} seguinte.
+
+Adicionalmente, para o correto uso do \textit{framework}, propõe-se uma etapa a mais no kanban de implementações da equipe de desenvolvimento, sendo esta a inspeção de código. A funcionalidade só será considerada finalizada, após inspecionada e aprovada por outro integrante da equipe.
+
+\section{Pesquisa de Satisfação dos Desenvolvedores}
+
+Para verificar o nível de satisfação dos desenvolvedores, concebeu-se uma pequena lista com itens a serem julgados pelos desenvolvedores de acordo com as opções disponíveis, citadas como componentes da métrica que responde à questão 4. A seguir, tem-se os itens de pesquisa.
+
+\begin{itemize}
+	\item As inspeções de código se mostraram eficazes na identificação de defeitos no código?
+
+	\item Os testes unitários implementados de acordo com o guia, de fato, exercitam o código de maneira eficiente?
+
+	\item As inspeções de código efetuadas segundo o guia e as implementações de testes unitários também feitas de acordo com o guia demonstraram-se onerosos ao processo de desenvolvimento?
+
+	\item O número de falhas percebidos pelo usuário passou a ser menor a cada \textit{release} entregue?
+
+	\item A manutenibilidade do código ficou melhor após as inspeções de código?
+\end{itemize}
+
+Será feito o cômputo das respostas atribuídas pelos desenvolvedores aos itens da pesquisa de satisfação usando a escala \textit{Likert}: 
+
+\begin{itemize}
+	\item {1 - Concordo Totalmente}.
+	\item {2 - Concordo Parcialmente}.
+	\item {3 - Discordo Parcialmente}.
+	\item {4 - Discordo Totalmente}.
+\end{itemize}
+
+É importante ressaltar que a pesquisa será aplicada ao final das entregas de \textit{release} e não ao final de cada \textit{sprint}. Dessa maneira, os desenvolvedores poderão assimilar mais experiências para fornecerem respostas mais concisas ao julgar os itens da pesquisa.
