@@ -1,6 +1,6 @@
 \chapter{Materiais e Métodos}
 
-Neste capítulo são descritos os procedimentos e materiais adotados no trabalho. Inicialmente, tem-se uma breve caracterização dos projetos selecionados nas organizações citadas na seção 3.4 inerente ao capítulo sobre metodologia. Posteriormente, são descritas todas as ferramentas utilizadas para coleta de dados. Por fim, são apontadas as atividades executadas neste estudo de acordo com o procedimento técnico pesquisa-ação.
+Neste capítulo são descritos os procedimentos e materiais adotados no trabalho. Inicialmente, tem-se uma breve caracterização dos projetos selecionados nas organizações citadas na seção 3.4 inerente ao capítulo sobre metodologia. Posteriormente, são descritas todas as ferramentas utilizadas para desenvolvimento, gerenciamento e coleta de dados. Por fim, são apontadas as atividades executadas neste estudo de acordo com o procedimento técnico pesquisa-ação.
 
 \section{Projetos selecionados na CGDF}
 
@@ -60,3 +60,81 @@ Tendo em vista esta oportunidade de negócio, a Instituição X solicitou o dese
 A solução proposta pelo Laboratório Fábrica de \textit{Software} envolve a elaboração de duas aplicações que funcionarão de forma conjunta. Há uma aplicação \textit{web}, sendo desenvolvida em linguagem de programação \textit{CSharp}, seguindo o estilo arquitetural MVC. Nesta aplicação, a área de negócio pode montar fichas personalizadas de perícia médica para os diversos editais que são publicados. Adicionalmente, a aplicação \textit{web} recebe todos os dados enviados pela segunda aplicação, que é \textit{mobile} e esta foi projetada para ser utilizada nos locais de realização da perícia médica. A aplicação \textit{mobile} também está sendo desenvolvida em linguagem \textit{CSharp} e também segue as diretrizes do estilo arquitetural MVC.
 
 A equipe de desenvolvimento do sistema de perícia médica também relatou a necessidade que possuíam de implementar um controle mais rigoroso da qualidade. Adicionalmente, a equipe também mencionou dificuldades na elaboração de testes unitários para a aplicação \textit{mobile}. Assim, o projeto caracterizou-se como uma excelente oportunidade para aplicação do \textit{framework} proposto por este trabalho.
+
+\section{Ferramentas para Desenvolvimento e Coleta de Dados}
+
+No contexto da CGDF, para o desenvolvimento do Portal da Transparência, utiliza-se a IDE (\textit{Integrated Development Environment}) \textit{Intellij}.
+
+A IDE \textit{Intellij} fornece suporte nativo para as tecnologias utilizadas no desenvolvimento do Portal. Adicionalmente, possui compatibilidade com diversos \textit{plugins}, dentre eles, o \textit{Metrics Reloaded}, o \textit{plugin} adotado neste estudo para coleta das métricas de código fonte do projeto Portal.
+
+Por fim, é válido destacar que a IDE \textit{Intellij} já possui integração nativa com a biblioteca JaCoCo (\textit{Java Code Coverage}), que fornece uma análise detalhada acerca da cobertura do código a partir da coloração apresentada no código fonte. As cores apresentadas pela biblioteca possuem significados específicos:
+
+\begin{itemize}
+	\item \textbf{Linhas Verdes:} Indicam que a suíte de testes cobriu o referido trecho de código tanto pela abordagem de \textit{statement coverage} quanto pela abordagem de \textit{branch coverage}.
+
+	\item \textbf{Linhas Amarelas:} Indicam que a suíte de testes cobriu parcialmente o referido trecho de código. Neste cenário, faz-se necessária a construção de mais um método de teste para exercitar o trecho faltante.
+
+	\item \textbf{Linhas Vermelhas:} Indicam que a suíte de testes não foi capaz de exercitar o referido trecho de código. Faz-se necessária a construção de métodos de teste para fazê-lo.
+\end{itemize}
+
+As figuras a seguir exibem, respectivamente, a tela de customização de métricas do \textit{Metrics Reloaded Plugin} e um trecho de código analisado pela biblioteca JaCoCo após execução da suíte de testes.
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/metricsReloaded.png}
+\caption{Tela de Customização de Métricas - \textit{Metrics Reloaded Plugin}}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/jacoco.png}
+\caption{Análise de Cobertura de Código - Jacoco}
+\end{figure}
+
+Com relação ao Sistema de Ouvidoria do Distrito Federal e ao Sistema de Perícia Médica, pelo fato de serem sistemas desenvolvidos em linguagem \textit{CSharp}, utiliza-se a IDE \textit{Visual Studio}.
+
+A IDE \textit{Visual Studio}, em sua versão \textit{Ultimate}, possui suporte para análise de cobertura de código e coleta de métricas.
+
+De forma semelhante à biblioteca JaCoCo, a IDE \textit{Visual Studio} exibe uma coloração específica para a análise de cobertura após execução da suíte de testes. Uma coloração azul claro é exibida nos trechos de código exercitados de forma efetiva pela suíte de testes (\textit{statement coverage} e \textit{branch coverage}). As linhas de código que apresentam uma coloração vermelha expressam insuficiência de métodos de teste na suíte para exercitá-las.
+
+As figuras a seguir exibem uma análise de cobertura de código feita pela IDE \textit{Visual Studio} após execução de uma suíte de testes, bem como o resultado da coleta de métricas.
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/codeCoverageVS.png}
+\caption{Análise de Cobertura de Código - \textit{Visual Studio}}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/metricsVS.png}
+\caption{Coleta de Métricas - \textit{Visual Studio}}
+\end{figure}
+
+\section{Ferramenta para Gerenciamento e Inspeções de Código}
+
+Tanto no contexto da CGDF como também do Laboratório Fábrica de \textit{Software}, utiliza-se a ferramenta de gerenciamento TFS (\textit{Team Foundation Server}). A ferramenta já apresenta suporte para gerenciamento de projetos que adotam metodologias ágeis, especificamente o \textit{Scrum}. A figura a seguir exibe a página inicial da ferramenta.
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/tfs.png}
+\caption{Página inicial - \textit{Team Foundation Server}}
+\end{figure}
+
+É válido ressaltar que a ferramenta TFS possui suporte para a realização de \textit{Pull Requests}, a forma encontrada neste estudo para que as inspeções fossem devidamente realizadas. O fluxo básico para realização das inspeções, tanto na CGDF como também no Laboratório Fábrica de \textit{Software}, apresenta os seguintes passos:
+
+\begin{enumerate}
+	\item O desenvolvedor, após finalizar a implementação da sua funcionalidade, submeterá um \textit{Pull Request} da sua \textit{branch} para a \textit{branch approval}. Durante este processo, o desenvolvedor deverá delegar esta inspeção a qualquer outro desenvolvedor membro do projeto.
+
+	\item O desenvolvedor que for designado para efetuar a inspeção deverá aplicar os \textit{checklists} propostos pelo \textit{framework} concebido neste estudo e efetuar os devidos apontamentos para o desenvolvedor que submeteu o \textit{Pull Request}.
+
+	\item Após correções e ajustes, caso necessário, o desenvolvedor que realizou a inspeção deverá efetuar a mesclagem do código na \textit{branch approval}.
+
+	\item Ao final da \textit{sprint}, todo o código da \textit{branch approval} será mesclado na \textit{branch} de homologação para entrega das funcionalidades desenvolvidas na \textit{sprint} à área de negócio.
+
+	\item Após homologação da \textit{release} entregue, será feita a contabilização do número de falhas inerentes às novas funcionalidades entregues, caso sejam notadas. Por fim, ocorrerá mesclagem do código na \textit{branch} master.
+\end{enumerate}
+
+\section{Ferramenta para Coleta do Índice de Satisfação dos Desenvolvedores}
+
+Para coletar a percepção dos desenvolvedores com relação ao uso do \textit{framework} proposto neste estudo, foi elaborado um formulário por meio da ferramenta \textit{Google Forms}. Basicamente, foram colocadas as questões e alternativas, segundo escala \textit{Likert}, já apresentados no capítulo sobre metodologia. A figura a seguir exibe a página inicial do formulário eletrônico.
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{figuras/questionario.png}
+\caption{Formulário Eletrônico - Índice de Satisfação dos Desenvolvedores}
+\end{figure}
