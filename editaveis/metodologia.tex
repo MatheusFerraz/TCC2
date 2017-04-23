@@ -126,8 +126,8 @@ No contexto de & Aumento da qualidade do \textit{software} \\
 A partir do quadro resumo que descreve o objetivo de medição, foram elaboradas questões a serem respondidas por meio das medições, bem como as métricas associadas às mesmas. A seguir, tem-se a apresentação das questões e métricas.
 
 \begin{itemize}
-	\item \textbf{Questão 1:} A densidade de defeitos diminui ao longo das \textit{sprints}?
-	\subitem Densidade de Defeitos por Unidade do Código
+	\item \textbf{Questão 1:} Como a quantidade de defeitos do código fonte evolui ao longo \textit{sprints}?
+	\subitem Número de Defeitos
 
 	\item \textbf{Questão 2:} Qual o nível de eficácia dos testes unitários implementados a partir do uso do guia de implementação do \textit{framework}?
 	\subitem Taxa de acertos por linha de código (Métrica fornecida pelas ferramentas de análise de cobertura)
@@ -142,7 +142,7 @@ A partir do quadro resumo que descreve o objetivo de medição, foram elaboradas
 	\subitem Índice de Manutenibilidade
 \end{itemize}
 
-A coleta de métricas será realizada ao final de cada \textit{sprint}, exceto o índice de satisfação e também, número de falhas (esta métrica só será coletada ao final das entregas de \textit{release}), de maneira a avaliar os resultados e verificar a efetividade do \textit{framework}. Caso ajustes sejam necessários, as modificações serão feitas e novamente, todo o ciclo de atividades será executado na \textit{sprint} seguinte.
+A coleta de métricas será realizada ao final de cada \textit{sprint}, de maneira a avaliar os resultados e verificar a efetividade do \textit{framework}. Caso ajustes sejam necessários, as modificações serão feitas e novamente, todo o ciclo de atividades será executado na \textit{sprint} seguinte.
 
 Adicionalmente, para o correto uso do \textit{framework}, propõe-se uma etapa a mais no kanban de implementações da equipe de desenvolvimento, sendo esta a inspeção de código. A funcionalidade só será considerada finalizada, após inspecionada e aprovada por outro integrante da equipe.
 
@@ -172,4 +172,21 @@ Será feito o cômputo das respostas atribuídas pelos desenvolvedores aos itens
 	\item {5 - Discordo Totalmente}.
 \end{itemize}
 
-É importante ressaltar que a pesquisa será aplicada ao final das entregas de \textit{release} e não ao final de cada \textit{sprint}. Dessa maneira, os desenvolvedores poderão assimilar mais experiências para fornecerem respostas mais concisas ao julgar os itens da pesquisa.
+É importante ressaltar que a pesquisa será aplicada ao final de cada \textit{sprint}. Dessa maneira, os desenvolvedores poderão assimilar mais experiências para fornecerem respostas mais concisas ao julgar os itens da pesquisa.
+
+\section{Níveis Operacionais das Métricas}
+
+Com relação às métricas adotadas por meio da aplicação do GQM, citadas anteriormente, esta seção traz detalhes acerca do Índice de Manutenibilidade.
+
+O Índice de Manutenibilidade indica um valor entre 0 e 100 e representa a facilidade em manter o código de um determinado módulo. Um valor alto expressa melhor manutenibilidade. De acordo com a \textit{Microsoft}, valores entre 20 e 100 expressam boa manutenibilidade. Valores entre 10 e 19 indicam manutenibilidade moderada e, por fim, valores entre 0 e 9 indicam pouca manutenibilidade.
+
+A figura a seguir expressa a fórmula utilizada para calcular o Índice de Manutenibilidade.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/mi.png}
+\caption{Fórmula para o cálculo do Índice de Manutenibilidade}
+\end{figure}
+
+A fórmula considera o Volume de Halstead, que indica a facilidade de entender o código, considerando todos os operadores e operandos, a complexidade ciclomática, que expressa a quantidade de fluxos diferentes que podem ser obtidos, a quantidade de linhas de código e o percentual de linhas de comentário.
+
+Por fim, com relação ao índice de satisfação dos desenvolvedores, nenhuma fórmula específica foi desenvolvida. Será considerado o percentual das alternativas da Escala \textit{Likert} obtido para cada questão do questionário.
