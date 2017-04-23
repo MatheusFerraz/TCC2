@@ -36,7 +36,7 @@ Como parte da estrutura da CGDF, existe a Subcontroladoria denominada Ouvidoria-
 
 O sistema de ouvidoria também passou por uma reformulação, sendo que já se encontra em sua segunda versão. Dentre as melhorias realizadas na navegação, foram incluídas novas funcionalidades que fornecem maior transparência ao cidadão durante o atendimento de sua manifestação.
 
-Assim como no Portal da Transparência, durante a concepção arquitetural da segunda versão do sistema de ouvidoria foram adotadas tecnologias modernas para o desenvolvimento. A camada de apresentação também utiliza o \textit{framework AngularJS} e a camada \textit{backend} foi construída utlizando a linguagem \textit{CSharp} seguindo as diretrizes do estilo arquitetural MVC (\textit{Model, View, Controller}) e também, do estilo de desenvolvimento DDD (\textit{Domain Driven Design}).
+Assim como no Portal da Transparência, durante a concepção arquitetural da segunda versão do sistema de ouvidoria foram adotadas tecnologias modernas para o desenvolvimento. A camada de apresentação também utiliza o \textit{framework AngularJS} e a camada \textit{backend} foi construída utlizando a linguagem \textit{CSharp} seguindo as diretrizes do estilo arquitetural MVC (\textit{Model, View, Controller}) e também, do estilo de desenvolvimento DDD (\textit{Domain Driven Design}). Posteriormente, a equipe do projeto optou por refatorar a camada de \textit{backend}, passando a utilizar \textit{Web API}.
 
 O DDD, por sua vez, é uma abordagem que se alinha concisamente às ideias apresentadas pela VBSE, pois basicamente, um dos aspectos mais destacados nesta abordagem é que o código produzido deve estar bem alinhado ao negócio. Este conceito, se utilizado corretamente, favorece a reutilização pois os blocos de construção facilitam o aproveitamento de um mesmo conceito de domínio ou um mesmo código em vários lugares \cite{ddd}. Adicionalmente, com um modelo bem feito e organizado, as diversas partes de um sistema interagem sem que haja muita dependência entre os módulos ou classes de objetos de conceitos distintos, acarretando em um quadro mínimo de acoplamento.
 
@@ -151,3 +151,26 @@ Como o \textit{framework} utilizado neste estudo já se caracteriza como um proc
 \includegraphics[width=\textwidth]{figuras/planejamento.png}
 \caption{Planejamento inicial - Ciclos de Coleta de Dados}
 \end{figure}
+
+\section{Diagnóstico Inicial dos Projetos}
+
+Na CGDF, como nenhum projeto era adepto de uma cultura centralizada em verificação, antes da aplicação do \textit{framework}, não havia implementação de testes unitários e também, realização de inspeções. Em muitas ocasiões, modificações efetuadas em um determinado componente do código fonte alterava o comportamento de outro componente. Este aspecto era percebido posteriormente pelos desenvolvedores durante atividades de
+\textit{debug}.
+
+O Portal da Transparência, em uma coleta inicial de métricas, apresentou índice de manutenibilidade médio igual a 60. Como mencionado anteriormente, a cobertura de código era 0\%, devido à inexistência de uma suíte de testes unitários. Adicionalmente, realizando um levantamento dos relatórios de falhas reportadas pela área de negócio acerca das \textit{sprints} passadas, foi possível identificar um número médio de falhas igual a 5.
+
+Com relação ao projeto da Ouvidoria, o cenário relativo à implementação de testes unitários era idêntico ao do Portal da Transparência, ou seja, cobertura de código em 0\%. No âmbito do número médio de falhas reportadas pela área de negócio, o projeto da Ouvidoria possuía cerca de 4 falhas reportadas ao final de cada \textit{sprint}. O código, contudo, apresentava um índice de manutenibilidade médio igual a 65.
+
+No Laboratório Fábrica de Software já ocorria implementação de testes unitários, porém, somente as classes do pacote \textit{controller} possuíam testes implementados. A partir de uma rápida inspeção nos códigos de teste, identificou-se a necessidade de refatorar trechos de código repetidos, bem como implementar mais cenários de testes de forma que o código fonte dos componentes sob teste fosse concisamente exercitado.
+
+\section{Restrições existentes na Coleta de Dados}
+
+Com base nas tecnologias utilizadas para construção dos sistemas, ferramentas existentes para coleta de métricas e disponibilidade das equipes para executar as atividades de verificação, foram delimitados escopos de coletas.
+
+No projeto do Portal, foi acordado realização de inspeções e implementação de testes unitários tanto para o código da camada de \textit{frontend} quanto da camada \textit{backend}. Com relação à análise do índice de manutenibilidade, somente a camada de \textit{backend} foi utilizada. A camada de \textit{frontend}, por se feita em \textit{Java Script}, não possui um suporte conciso em termos de ferramentas para realizar a análise desta métrica.
+
+Quanto ao projeto da Ouvidoria, foi acordado realização de inspeções e implementação de testes somente para a camada de \textit{backend}. A equipe do projeto, por não possuir experiência em verificação, considerou melhor aplicar o \textit{framework} inicialmente desta maneira. Contudo, a equipe do projeto pretende futuramente incluir a camada de \textit{frontend} nas análises.
+
+Por fim, no Laboratório Fábrica de Software, optou-se também por efetuar as inspeções e implementação de testes unitários somente na camada de \textit{backend}.
+
+É válido ressaltar que tanto no projeto da Ouvidoria quanto no projeto da Perícia Médica, foram acordadas inspeções rápidas do código da camada de \textit{frontend} antes da mesclagem nas \textit{branches} oficiais. Porém, seus resultados não foram considerados formalmente para os fins da análise efetuada neste trabalho.
