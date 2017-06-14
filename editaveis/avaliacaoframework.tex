@@ -1,14 +1,47 @@
 \chapter{Aplicação do \textit{Framework}}
 
-Neste capítulo são apresentados os resultados de cada \textit{sprint} executada nos projetos selecionados para análise. Adicionalmente, uma breve percepção é apresentada acerca dos resultados obtidos, bem como relato do que foi preciso aperfeiçoar no \textit{framework}.
+Neste capítulo são apresentados os resultados de cada \textit{sprint} executada nos projetos selecionados para análise. Neste trabalho, cada \textit{sprint} representa um ciclo de pesquisa-ação e, como etapas de um ciclo, tem-se o planejamento, a ação e a avaliação. O relato da etapa de planejamento detalha tudo o que foi concebido entre a equipe de pesquisa, equipe de TI da instituição e área de negócio do projeto. A etapa ação evidencia como as atividades planejadas na etapa anterior se desenvolveram. Por fim, na etapa de avaliação, os dados coletados são exibidos bem como uma breve análise. Será possível contemplar gráficos comparativos ao final para evidenciar a evolução dos ciclos em cada projeto.
 
-\section{\textit{Sprint} 1 - Portal da Transparência do Distrito Federal}
+\section{Inicialização dos Ciclos - Treinamento}
+
+Como demonstrado no planejamento da execução dos ciclos de pesquisa-ação, no capítulo sobre Materiais e Métodos, foi realizado um treinamento em todas as instituições com o propósito de esclarecer conceitos e práticas propostas pelo \textit{framework}. Nesse âmbito, foram evidenciados os aspectos inerentes à verificação de \textit{software} e utilização de ferramentas para as equipes de TI e, por outro lado, procurou-se dialogar com as áreas de negócio para tratar sobre os aspectos formais de como os projetos seriam executados a partir daquele momento, considerando práticas da VBSE.
+
+Para familiarizar as equipes de TI com as práticas de implementação de testes unitários e inspeção de código, foram organizadas dinâmicas denominadas \textit{Coding Dojo}. Nesse tipo de dinâmica todas as pessoas atuam na construção de uma solução proposta pelo idealizador, alternando a posição reflexiva da platéia com as posições mais ativas dos pilotos. Assim, a construção sempre continua a partir do que os pilotos anteriores já desenvolveram.
+
+As dinâmicas foram projetadas considerando as tecnologias e ferramentas utilizadas pelas equipes de TI. No caso da CGDF, para o projeto do Portal, considerou-se uma dinâmica de desenvolvimento de uma API \textit{REST} utilizando o \textit{framework Spring}. Adicionalmente, os participantes desenvolveram testes unitários e os demais desenvolvedores desempenhavam ações de inspeção. De forma semelhante, para o projeto de construção do Sistema de Ouvidoria foi organizada uma dinâmica para desenvolvimento de um simples exemplo com testes e inspeções. Para a equipe de desenvolvimento do Sistema de Correição não foi necessário promover outro treinamento, visto que os integrantes já haviam participado dos dojos anteriores.
+
+No Laboratório Fábrica de \textit{Software} foi feito um dojo que envolvia a criação de uma aplicação \textit{mobile} na plataforma \textit{Android} juntamente com a implementação de testes unitários e inspeções.
+
+Com relação às áreas de negócio, foi necessário enfatizar o motivo pelo qual a quantidade de \textit{story points} passou a ser menor: aumento da qualidade das entregas. Para executar as atividades de verificação de \textit{software}, as equipes de TI optaram, a priori, pela redução da carga de trabalho.
+
+\section{Ciclo 1}
+
+\subsection{Portal da Transparência}
+
+\subsubsection{Planejamento}
+
+A partir de uma reunião com a área de negócio, tendo em vista o acordo de resultados com o governador do Distrito Federal, foi realizada uma priorização de itens do \textit{backlog}. Dessa forma, as seguintes funcionalidades foram acordadas:
+
+\begin{itemize}
+	\item Ajustes na consulta de Empresas Punidas
+	\item Reformulação de filtros nos \textit{dashboards} de dados sobre Servidores e Remuneração dos Servidores
+	\item Ajustes na consulta de Licitações e Contratos
+\end{itemize}
+
+Antes do início da \textit{Sprint} 1, os desenvolvedores configuraram o ambiente de testes, visto que o projeto do Portal não compreendia essas atividades anteriormente.
+
+\subsubsection{Ação}
+
+Com base nos itens do \textit{backlog} priorizados, todas as tarefas foram criadas na ferramenta de gerenciamento TFS. A partir de então, as atividades corriqueiras do \textit{Scrum} foram executadas em conjunto com as práticas propostas pelo \textit{framework} concebido neste trabalho.
+
+\subsubsection{Avaliação}
 
 A \textit{Sprint} 1 do projeto do portal foi executada com êxito. Todas as funcionalidades foram entregues. É válido ressaltar também que os testes unitários foram devidamente implementados para todos os componentes que sofreram alterações e também, as inspeções foram realizadas. Contudo, a equipe do projeto protelou as atividades de verificação, tornando a finalização da \textit{sprint} mais onerosa.
 
 As tabelas \ref{table:tabela2} e \ref{table:tabela3} exibem um resumo das métricas coletadas para as camadas de \textit{frontend} e \textit{backend}, respectivamente.
 
 \begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Portal da Transparência (\textit{Frontend})}
 \centering
 \begin{tabular}{ | m{8cm} | m{8cm} | } 
 \hline
@@ -17,11 +50,11 @@ Número de Defeitos & 4 \\
 Taxa de Acertos por Linha de Código & 3 \\ 
 \hline
 \end{tabular}
-\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Portal da Transparência (\textit{Frontend})}
 \label{table:tabela2}
 \end{table}
 
 \begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Portal da Transparência (\textit{Backend})}
 \centering
 \begin{tabular}{ | m{8cm} | m{8cm} | } 
 \hline
@@ -30,7 +63,6 @@ Número de Defeitos & 3 \\
 Taxa de Acertos por Linha de Código & 2 \\ 
 \hline
 \end{tabular}
-\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Portal da Transparência (\textit{Backend})}
 \label{table:tabela3}
 \end{table}
 
@@ -41,6 +73,7 @@ Com relação à taxa de acertos por linha de código, a suíte de testes elabor
 Com relação à camada \textit{backend}, calculou-se o índice de manutenibilidade para todos os componentes alterados. A tabela \ref{table:tabela4} exibe estes dados, indicando a classe com o seu respectivo índice calculado.
 
 \begin{table}[h]
+\caption{Índice de Manutenibilidade \textit{Sprint} 1 - Portal da Transparência (\textit{Backend})}
 \centering
 \begin{tabular}{ | m{10cm} | m{6cm} | } 
 \hline
@@ -55,7 +88,6 @@ Remuneração - \textit{Controller} & 74,51 \\
 Empresa Punida Relatório - \textit{Service} & 84,82 \\
 \hline
 \end{tabular}
-\caption{Índice de Manutenibilidade \textit{Sprint} 1 - Portal da Transparência (\textit{Backend})}
 \label{table:tabela4}
 \end{table}
 
@@ -63,17 +95,41 @@ Foi possível perceber um valor baixo do índice para a classe \textit{Servidore
 
 Com relação ao número de falhas identificadas pela área de negócio, nada foi reportado. Este aspecto indica que uma verificação concisa possui forte impacto na qualidade do produto entregue.
 
-Por fim, tem-se o percentual obtido para as respostas relacionadas ao questionário de verificação da satisfação dos desenvolvedores ao utilizarem o \textit{framework}. Foi possível perceber que a equipe de desenvolvimento do portal apresentou boa aceitação quanto ao uso do \textit{framework}. Em linhas gerais, as inspeções e a forma de implementar testes unitários foram bem vistas pelos desenvolvedores. Ainda assim, as práticas propostas, segundo os desenvolvedores da equipe, se mostratam onerosas em contextos de equipes pequenas (até 3 desenvolvedores). 
+Por fim, tem-se o percentual obtido para as respostas relacionadas ao questionário de verificação da satisfação dos desenvolvedores ao utilizarem o \textit{framework}. Foi possível perceber que a equipe de desenvolvimento do portal apresentou boa aceitação quanto ao uso do \textit{framework}. Em linhas gerais, as inspeções e a forma de implementar testes unitários foram bem vistas pelos desenvolvedores. Ainda assim, as práticas propostas, segundo os desenvolvedores da equipe, se mostratam onerosas em contextos de equipes pequenas (até 3 desenvolvedores). A figura \ref{fig:satisfacaoPortal1} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_portal_1.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 1 do Portal}
+\label{fig:satisfacaoPortal1}
+\end{figure}
 
 \clearpage
 
-\section{\textit{Sprint} 1 - Sistema de Ouvidoria do Distrito Federal}
+\subsection{Sistema de Ouvidoria}
+
+\subsubsection{Planejamento}
+
+Assim como o projeto do Portal, o Sistema de Ouvidoria é um projeto que possui metas no acordo de resultados com o governador do Distrito Federal. Por se tratar de um sistema que recebe diretamente manifestações por parte dos cidadãos e por armazenar tantos dados diariamente, as seguintes funcionalidades foram acordadas:
+
+\begin{itemize}
+	\item Reformulação do filtro de manifestações
+	\item Disponibilização de um questionário de pesquisa de satisfação dos cidadãos quanto ao atendimento das manifestações
+\end{itemize}
+
+Como o projeto não compreendia práticas de verificação de \textit{software}, a equipe de TI também teve que configurar o ambiente de testes antes do início da \textit{sprint}.
+
+\subsubsection{Ação}
+
+As atividades padrão do \textit{Scrum} e do \textit{framework} aqui proposto foram desenvolvidas durante a \textit{sprint}. Adicionalmente, todas as tarefas relacionadas às funcionalidades foram criadas no TFS para maior controle do andamento da iteração de desenvolvimento.
+
+\subsubsection{Avaliação}
 
 Assim como no projeto do portal, a primeira \textit{sprint} do projeto do sistema de ouvidoria também foi executada com êxito. A equipe de desenvolvimento também protelou as atividades de verificação, alocando-as para o final da \textit{sprint}.
 
 A tabela \ref{table:tabela5} exibe um resumo das métricas coletadas para as camadas de \textit{backend}.
 
 \begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Sistema de Ouvidoria (\textit{Backend})}
 \centering
 \begin{tabular}{ | m{8cm} | m{8cm} | } 
 \hline
@@ -82,7 +138,6 @@ Número de Defeitos & 1 \\
 Taxa de Acertos por Linha de Código & 3 \\ 
 \hline
 \end{tabular}
-\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - Sistema de Ouvidoria (\textit{Backend})}
 \label{table:tabela5}
 \end{table}
 
@@ -91,6 +146,7 @@ A partir dos dados exibidos pela tabela, constata-se que o código foi bem imple
 Com relação ao índice de manutenibilidade, os valores calculados são expressos na tabela \ref{table:tabela6}.
 
 \begin{table}[h]
+\caption{Índice de Manutenibilidade \textit{Sprint} 1 - Sistema de Ouvidoria (\textit{Backend})}
 \centering
 \begin{tabular}{ | m{12cm} | m{4cm} | } 
 \hline
@@ -113,7 +169,6 @@ Resposta Questionario Service - \textit{Domain.Service} & 65 \\
 Resposta Service - \textit{Domain.Service} & 64 \\
 \hline
 \end{tabular}
-\caption{Índice de Manutenibilidade \textit{Sprint} 1 - Sistema de Ouvidoria (\textit{Backend})}
 \label{table:tabela6}
 \end{table}
 
@@ -121,4 +176,10 @@ Considerando os parâmetros da \textit{Microsoft}, todas as classes e interfaces
 
 Assim como no projeto do portal, não houve registro de falhas por parte da área de negócio. Todas as funcionalidades entregues ao final da \textit{sprint} foram estabelecidas de forma consistente.
 
-Por fim, com relação ao índice de satisfação dos desenvolvedores, também contemplou-se uma boa percepção acerca da utilização do \textit{framework}. A equipe também considerou as práticas propostas pelo \textit{framework} onerosas para contextos de equipes pequenas e sugeriu que fosse feita uma adequação das práticas para equipes pequenas.
+Por fim, com relação ao índice de satisfação dos desenvolvedores, também contemplou-se uma boa percepção acerca da utilização do \textit{framework}. A equipe também considerou as práticas propostas pelo \textit{framework} onerosas para contextos de equipes pequenas e sugeriu que fosse feita uma adequação das práticas para equipes pequenas. A figura \ref{fig:satisfacaoOuvidoria1} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_ouvdf_1.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 1 do Sistema de Ouvidoria}
+\label{fig:satisfacaoOuvidoria1}
+\end{figure}
