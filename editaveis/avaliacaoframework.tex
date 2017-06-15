@@ -183,3 +183,187 @@ Por fim, com relação ao índice de satisfação dos desenvolvedores, também c
 \caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 1 do Sistema de Ouvidoria}
 \label{fig:satisfacaoOuvidoria1}
 \end{figure}
+
+\clearpage
+
+\subsection{Sicor - Sistema de Correição}
+
+\subsubsection{Planejamento}
+
+Pelo fato de o SICOR ser um novo projeto na CGDF, a equipe de TI realizou um diálogo prévio com a área de negócio para obter uma visão geral acerca de todas as funcionalidades que o sistema deveria possuir até a data da primeira entrega prevista no acordo de resultados com o governador.
+
+Foi possível perceber a necessidade de agrupar as funcionalidades do sistema em 4 \textit{features} principais, sendo:
+
+\begin{itemize}
+	\item Módulo Administrativo
+	\item Módulo Correcional
+	\item Módulo Disciplinar
+	\item Módulo de Responsabilização
+\end{itemize}
+
+Considerando os aspectos da VBSE, durante as conversas com a área de negócio, percebeu-se que todas as informações presentes no sistema deveriam ser tratadas como sigilosas. Adicionalmente, a área de negócio solicitou uma trilha de auditoria complexa para a aplicação, sendo que todos os eventos ocorridos deveriam ser registrados e sempre vinculados ao usuário responsável pelo mesmo.
+
+Dessa forma, a área de negócio priorizou o módulo adminstrativo, caracterizando-o como crítico e fundamental para o sistema. Adicionalmente, a equipe de TI ponderou que este módulo seria fundamental para inicializar a construção da arquitetura do sistema, visto que todos os mecanismos de segurança e registro de eventos deveriam ser projetos e implementados logo no início.
+
+Para a primeira \textit{sprint} do projeto, as funcionalidades acordadas foram:
+
+\begin{itemize}
+	\item Criação da arquitetura de registro de eventos (Logs)
+	\item Cadastro de Usuários
+	\item Cadastro de Unidades
+	\item Login
+	\item Cadastro de Perfis
+\end{itemize}
+
+Após priorização, a equipe de desenvolvimento iniciou as configurações de ambiente, banco de dados etc. O mais interessante é que a reestruturação efetuada nos outros projetos contribuiu de forma significativa para o início da contrução do SICOR. Além disso, a equipe de desenvolvimento já havia participado previamente das iterações de desenvolvimento de outros projetos e, portanto, já estava familiarizada com as práticas propostas pelo \textit{framework} de avaliação da qualidade de código.
+
+\subsubsection{Ação}
+
+Antes que a \textit{sprint} fosse iniciada, todas as histórias foram registradas no TFS. Adicionalmente, todas as tarefas vinculadas também foram cadastradas. Ao final da execução da \textit{sprint}, somente uma funcionalidade não foi entregue, sendo o cadastro de unidades.
+
+\subsubsection{Avaliação}
+
+Apesar de uma funcionalidade não ter sido entregue, a primeira \textit{sprint} do SICOR foi considerada um sucesso. As tabelas \ref{table:tabela7} e \ref{table:tabela8} exibem um resumo das métricas coletadas para as camadas de \textit{frontend} e \textit{backend}, respectivamente.
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - SICOR (\textit{Frontend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 1 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 1 \\ 
+\hline
+\end{tabular}
+\label{table:tabela7}
+\end{table}
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 1 - SICOR (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 1 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 2,46 \\ 
+\hline
+\end{tabular}
+\label{table:tabela8}
+\end{table}
+
+A partir dos dados exibidos nas tabelas acima é possível perceber uma baixa quantidade de defeitos, que evidencia uma maior precisão por parte dos desenvolvedores nos momentos de implementação. Adicionalmente, a suíte de testes unitários implementada foi capaz de exercitar, em média, 1 vez o trecho de código sob teste na camada de \textit{frontend} e 2,46 vezes o trecho de código sob teste na camada de \textit{backend}. Ao final da \textit{sprint}, percebeu-se um percentual total de cobetura igual a 100\% na camada de \textit{frontend} e 95\% na camada de \textit{backend}. É válido ressaltar que não foi reportado nenhuma percepção de falha do sistema por parte da área de negócio durante a homologação.
+
+Com relação ao quesito manutenibilidade e complexidade do código, como mencionado no capítulo sobre metodologia, adotou-se a métrica Flog (devido às particularidades da linguagem Ruby e do \textit{framework Rails}). A seguir, tem-se a tabela \ref{table:tabela9}, que exibe a pontuação total da métrica para as principais classes implementadas.
+
+\begin{table}[h]
+\caption{Flog \textit{Sprint} 1 - SICOR (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{12cm} | m{4cm} | } 
+\hline
+Auditoria (Log) & 14 \\ 
+\hline
+\textit{Application} - \textit{Controller} & 12 \\ 
+\hline
+Usuário - \textit{Controller} & 38 \\ 
+\hline
+Usuário - Modelo & 11,6 \\ 
+\hline
+Órgão - \textit{Controller} & 3,2 \\
+\hline
+Auditoria Base - Módulo Log & 3 \\
+\hline
+\textit{Handler} - Módulo Usuário & 2,3 \\
+\hline
+\end{tabular}
+\label{table:tabela9}
+\end{table}
+
+\clearpage
+
+Embora a trilha de auditoria realmente tenha sido considerada uma funcionalidade crítica do sistema, as escolhas de tecnologias se caracterizaram como apropriadas para o contexto, visto que o processamento é dividido entre o cliente e o servidor (API \textit{REST} com cliente \textit{AngularJS}). Esse aspecto favoreceu a diminuição da complexidade do código na camada de \textit{backend}.
+
+Por fim, é válido ressaltar que embora os desenvolvedores do projeto já tivessem familiaridade com o \textit{framework} de avaliação da qualidade de código, ainda consideraram as práticas onerosas para o processo de desenvolvimento em contextos de equipes pequenas. Contudo, afirmaram que se a equipe possuir disciplina no seu fluxo de atividades, é possível conciliar o alto número de atividades com os prazos. A figura \ref{fig:satisfacaoSicor1} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_sicor_1.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 1 do SICOR}
+\label{fig:satisfacaoSicor1}
+\end{figure}
+
+\clearpage
+
+\subsection{Sistema de Perícia Médica}
+
+\subsubsection{Planejamento}
+
+Durante os diálogos realizados entre a equipe de desenvolvimento e a área de negócio, o projeto de desenvolvimento do Sistema de Perícia Médica esteve voltado, durante a primeira \textit{sprint} avaliada por este trabalho, para aperfeiçoamentos e correções de \textit{bugs} encontrados nas funcionalidades desenvolvidas nas iterações precedentes.
+
+Basicamente, os seguintes itens foram acordados com a área de negócio:
+
+\begin{itemize}
+	\item Melhorias no \textit{layout} da Aplicação \textit{Mobile}
+	\item Aperfeiçoamentos no menu de operações disponíveis na Aplicação \textit{Mobile}
+	\item Correção de bugs no cadastro de colaboradores
+	\item Melhorias no cadastro de tablets na Aplicação \textit{Web}
+\end{itemize}
+
+\subsubsection{Ação}
+
+Ao final da priorização, a equipe de desenvolvimento registrou as descrições dos itens a serem implementados bem como suas respectivas tarefas na ferramenta TFS. A \textit{sprint} contemplou atrasos, dessa forma, as atividades de verificação foram proteladas para o final da mesma, assim como as mesclagens de código considerando o fluxo e política de \textit{branches}.
+
+\subsubsection{Avaliação}
+
+Embora atrasos tenham sido contemplados, todas os itens tiveram sua implementação finalizada. A suíte de testes unitários implementada não contemplou todos os cenários mais básicos considerando a estrutura do código das classes. Adicionalmente, a equipe apresentou muita dificuldade para implementar testes de \textit{Fragments} (um dos elementos constituintes da arquitetura de uma aplicação para plataforma \textit{Android}) e assim, somente as classes da camada \textit{controller} foram finalizadas com suítes de testes consistentes. Quanto à aplicação \textit{Web}, as implementações ocorreram sem registro de dificuldades.
+
+Considerando o código das aplicações, após as inspeções, foi contemplado um total de 5 defeitos. Pelo fato de ter ocorrido atrasos na execução da \textit{sprint}, os defeitos foram corrigidos após finalização da mesma e antes de ocorrer a entrega formal dos resultados para a área de negócio. Quanto a suíte de testes, cada método de teste foi capaz de exercitar somente 1 vez o trecho de código sob teste. Adicionalmente, a inexistência de uma ferramenta de análise de cobertura prejudicou a percepção de mais cenários de teste por parte da equipe de desenvolvimento.
+
+Embora a suíte de testes não tenha sido implementada da melhor forma possível, a área de negócio não reportou nenhuma falha quanto ao que havia sido implementado.
+
+Por fim, coletou-se o índice de manutenibilidade das classes alteradas durante a execução da \textit{sprint}. A tabela \ref{table:tabela10} exibe os resultados da coleta.
+
+\begin{table}[h]
+\caption{Índice de Manutenibilidade \textit{Sprint} 1 - Sistema de Perícia Médica (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{12cm} | m{4cm} | } 
+\hline
+AlterarFuncaoFragment - \textit{Mobile} & 59 \\ 
+\hline
+MenuCoordenadorFragment - \textit{Mobile} & 64 \\ 
+\hline
+ColaboradorController - \textit{Mobile} & 73 \\ 
+\hline
+ColaboradorDAO - \textit{Mobile} & 69 \\ 
+\hline
+CadastrarColaboradorFragment - \textit{Mobile} & 53 \\
+\hline
+MainActivity - \textit{Mobile} & 73 \\
+\hline
+ViewUtils - \textit{Mobile} & 59 \\
+\hline
+ListarEquipeContratanteFragment - \textit{Mobile} & 63 \\
+\hline
+TabletController - \textit{Web} & 74 \\
+\hline
+SessaoController - \textit{Web} & 65 \\
+\hline
+LiberaQRCodeController - \textit{Web} & 72 \\
+\hline
+RegistrarTabletEvento - \textit{Web Service} & 71 \\
+\hline
+\end{tabular}
+\label{table:tabela10}
+\end{table}
+
+É possível perceber com os dados da tabela acima que as classes apresentaram índice de manutenibilidade aceitável dentro dos parâmetros da \textit{Microsoft}. Como mencionado anteriormente, mesmo que a suíte de testes não tenha contemplado todos os cenários básicos possíveis, as inspeções auxiliaram na identificação de defeitos e na visualização de formas melhores de se organizar o código, possibilitando altos índices de manutenibilidade e número reduzido de falhas.
+
+Com relação ao uso do \textit{framework}, a equipe do Laboratório Fábrica de \textit{Software} apresentou menos receptividade do que as equipes da CGDF. Contudo, ainda assim, ressaltou que as inspeções auxiliaram significativamente na melhoria do índice de manutenibilidade do código. A figura \ref{fig:satisfacaoPericia1} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_pericia_1.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 1 do Sistema de Perícia Médica}
+\label{fig:satisfacaoPericia1}
+\end{figure}
+
+\clearpage
+
+\section{Ciclo 2}
