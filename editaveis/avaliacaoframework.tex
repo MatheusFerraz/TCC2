@@ -572,8 +572,60 @@ Por fim, tem-se as respostas relacionadas ao questionário de verificação da s
 
 \subsubsection{Planejamento}
 
+A segunda iteração de desenvolvimento do projeto de construção do Sistema de Perícia Médica teve enfoque na sincronização de dados entre os \textit{tablets} portadores da aplicação. Esse mecanismo é fundamental para os testes de aptidão promovidos pela Instituição X, parceira e patrocinadora do Laboratório Fábrica de \textit{Software}.
+
+As funcionalidades discutidas e acordadas entre a área de negócio e a área de desenvolvimento foram:
+
+\begin{itemize}
+	\item Criptografia do banco de dados da aplicação \textit{mobile}
+	\item Registro de log de operações efetuadas na aplicação \textit{mobile}
+	\item Transmissão de informações entre \textit{tablets}
+	\item Mesclagem de dados a partir da compração do horário da alteração
+\end{itemize}
+
 \subsubsection{Ação}
+
+Assim como em todas as iterações relatadas até a presente seção, a equipe de desenvolvimento registrou as atividades na ferramenta TFS para gerenciamento e controle do andamento da \textit{sprint}. Ao final, somente a funcionalidade de mesclagem de dados obteve testes unitários implementados. Nas demais, os módulos foram implementados, mas não tiveram testes unitários. As inspeções foram efetuadas em todos os módulos.
 
 \subsubsection{Avaliação}
 
+A partir das inspeções efetuadas pela equipe, foi identificado um total de 4 defeitos no código. Os defeitos foram corrigidos somente após o prazo de encerramenta da \textit{sprint}. Da mesma forma como na \textit{sprint} 1, a suíte de testes não se caracterizou como consistente a partir de uma perspectiva geral. Muitos testes não foram implementados e os módulos que obtiveram implementação de testes unitários careciam de mais cenários.
+
+De forma semelhante à \textit{sprint} 1, a área de negócio não contemplou falhas durante a homologação dos itens desenvolvidos.
+
+Por fim, coletou-se o índice de manutenibilidade das classes alteradas durante a execução da \textit{sprint}. A tabela \ref{table:tabela17} exibe os resultados da coleta.
+
+\begin{table}[h]
+\caption{Índice de Manutenibilidade \textit{Sprint} 2 - Sistema de Perícia Médica (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{12cm} | m{4cm} | } 
+\hline
+ColaboradorDAO - \textit{Mobile} & 66 \\ 
+\hline
+CandidatoDAO - \textit{Mobile} & 70 \\
+\hline
+EquipeContratanteDAO - \textit{Mobile} & 66 \\
+\hline
+MembroEquipeContratanteDAO - \textit{Mobile} & 67 \\
+\hline
+InscritoDAO - \textit{Mobile} & 67 \\
+\hline
+ResultadoDAO - \textit{Mobile} & 67 \\
+\hline
+MiniBanco - \textit{Mobile} & 56 \\
+\hline
+\end{tabular}
+\label{table:tabela17}
+\end{table}
+
 \clearpage
+
+A partir dos dados apresentados pela tabela acima, é possível concluir que as inspeções auxiliaram na estabilidade do índice de manutenibilidade e favoreceu o aumento deste para algumas classes tendo em vista o índice de manutenibilidade médio relatado na seção de diagnóstico do projeto.
+
+Com relação ao uso do \textit{framework}, a equipe do Laboratório Fábrica de \textit{Software} apresentou maior receptividade em relação à \textit{sprint} anterior. A figura \ref{fig:satisfacaoPericia2} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_pericia_2.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 2 do Sistema de Perícia Médica}
+\label{fig:satisfacaoPericia2}
+\end{figure}
