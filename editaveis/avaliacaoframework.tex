@@ -16,6 +16,8 @@ Com relação às áreas de negócio, foi necessário enfatizar o motivo pelo qu
 
 \section{Ciclo 1}
 
+O principal objetivo do Ciclo 1 foi avaliar o primeiro uso do \textit{framework} de avaliação da qualidade de código nos contextos selecionados e, a partir dos resultados obtidos, caso necessário, efetuar ajustes nas atividades constituintes do mesmo. A seções a seguir descrevem de forma detalhada os acontecimentos e dados coletados durante a execução da \textit{sprint} 1 dos projetos selecionados.
+
 \subsection{Portal da Transparência}
 
 \subsubsection{Planejamento}
@@ -77,7 +79,7 @@ Com relação à camada \textit{backend}, calculou-se o índice de manutenibilid
 \centering
 \begin{tabular}{ | m{10cm} | m{6cm} | } 
 \hline
-Empresa Punida - \textit{Model} & 95,12 \\ 
+Empresa Punida - Modelo & 95,12 \\ 
 \hline
 Empresa Punida - \textit{Controller} & 94,99 \\ 
 \hline
@@ -186,7 +188,7 @@ Por fim, com relação ao índice de satisfação dos desenvolvedores, também c
 
 \clearpage
 
-\subsection{Sicor - Sistema de Correição}
+\subsection{SICOR - Sistema de Correição}
 
 \subsubsection{Planejamento}
 
@@ -203,7 +205,7 @@ Foi possível perceber a necessidade de agrupar as funcionalidades do sistema em
 
 Considerando os aspectos da VBSE, durante as conversas com a área de negócio, percebeu-se que todas as informações presentes no sistema deveriam ser tratadas como sigilosas. Adicionalmente, a área de negócio solicitou uma trilha de auditoria complexa para a aplicação, sendo que todos os eventos ocorridos deveriam ser registrados e sempre vinculados ao usuário responsável pelo mesmo.
 
-Dessa forma, a área de negócio priorizou o módulo adminstrativo, caracterizando-o como crítico e fundamental para o sistema. Adicionalmente, a equipe de TI ponderou que este módulo seria fundamental para inicializar a construção da arquitetura do sistema, visto que todos os mecanismos de segurança e registro de eventos deveriam ser projetos e implementados logo no início.
+Dessa forma, a área de negócio priorizou o módulo adminstrativo, caracterizando-o como crítico e fundamental para o sistema. Adicionalmente, a equipe de TI ponderou que este módulo seria fundamental para inicializar a construção da arquitetura do sistema, visto que todos os mecanismos de segurança e registro de eventos deveriam ser projetados e implementados logo no início.
 
 Para a primeira \textit{sprint} do projeto, as funcionalidades acordadas foram:
 
@@ -367,3 +369,211 @@ Com relação ao uso do \textit{framework}, a equipe do Laboratório Fábrica de
 \clearpage
 
 \section{Ciclo 2}
+
+O principal objetivo do Ciclo 2 foi efetuar os ajustes necessários na execução das atividades propostas pelo \textit{framework} de avaliação da qualidade de código, bem como fornecer uma orientação quanto às dúvidas remanescentes por parte das equipes de desenvolvimento das instituições selecionadas para este trabalho.
+
+Com base no relato do Ciclo 1, foi possível perceber que todas as equipes mencionaram que as práticas propostas pelo \textit{framework} se mostraram parcialmente onerosas ao processo de desenvolvimento em âmbito de equipes pequenas. Assim, procurou-se obter por parte dos desenvolvedores sugestões de melhoria para o fluxo proposto pelo \textit{framework}. Chegou-se a conclusão de que não poderia ocorrer exclusão de atividades mesmo para contextos menores, visto que o diferencial do \textit{framework} é justamente o agrupamento das melhores práticas relativas à implementação de testes unitários e realização de inspeções de código, bem como a incorporação dos conceitos da VBSE, possibilitando com que o projeto seja executado de forma a atingir sua missão.
+
+As demais atividades do \textit{framework} apenas refletem o que já é proposto pelo \textit{Scrum}. Quanto à primeira atividade, relacionada à VBSE (Elicitação das Propostas de Valor), não percebeu-se nenhuma carga extra de trabalho. Inclusive, as áreas de negócio passaram a fornecer \textit{feedbacks} que expressavam maior satisfação quanto às atividades desempenhadas pelas equipes de desenvolvimento.
+
+Considerando os fatos citados acima, as próprias equipes de desenvolvimento reconheceram que protelavam as atividades de verificação e que, pelo fato de não terem a cultura de realizar tais atividades, obtiveram certa dificuldade. Dessa maneira, nenhum ajuste foi efetuado no \textit{framework} e as equipes procuraram realizar as atividades com o mínimo de protelação durante o Ciclo 2.
+
+\subsection{Portal da Transparência}
+
+\subsubsection{Planejamento}
+
+Em reunião com a área de negócio, considerando o acordo de resultados com o governador, as seguintes funcionalidades foram acordadas:
+
+\begin{itemize}
+	\item Reformulação da Consulta de Empresas Punidas (Compatibilização com os dados da CGU - Controladoria Geral da União)
+	\item Inclusão da Consulta de Órgãos Deliberativos
+	\item Aperfeiçoamentos na Consulta Dinâmica de Despesas
+\end{itemize}
+
+Antes do início da \textit{sprint}, a equipe não precisou dedicar tempo à configuração de ambiente de testes, visto que tudo foi feito durante a \textit{sprint} 1. Adicionalmente, a equipe de desenvolvimento acordou que nenhuma classe deveria ficar com índice de manutenibilidade inferior à 45 após finalização das implementações.
+
+\subsubsection{Ação}
+
+Com base nos itens do \textit{backlog} priorizados, todas as tarefas foram criadas na ferramenta de gerenciamento TFS. A partir de então a equipe de desenvolvimento passou a fornecer maior atenção para as atividades de verificação e sempre que uma funcionalidade era finalizada, imediatamente após ocorria a inspeção da mesma. Dessa forma, a \textit{sprint} foi executada com êxito dentro do prazo estabelecido.
+
+\subsubsection{Avaliação}
+
+A \textit{Sprint} 2 do projeto do portal, como mencionado na seção anterior, foi executada com êxito. Todas as funcionalidades foram entregues. É válido ressaltar também que os testes unitários foram devidamente implementados para todos os componentes que sofreram alterações e também, as inspeções foram realizadas.
+
+As tabelas \ref{table:tabela11} e \ref{table:tabela12} exibem um resumo das métricas coletadas para as camadas de \textit{frontend} e \textit{backend}, respectivamente.
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 2 - Portal da Transparência (\textit{Frontend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 1 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 4 \\ 
+\hline
+\end{tabular}
+\label{table:tabela11}
+\end{table}
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 2 - Portal da Transparência (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 2 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 2 \\ 
+\hline
+\end{tabular}
+\label{table:tabela12}
+\end{table}
+
+A partir dos dados exibidos pelas tabelas acima, considerando somente os novos trechos de códigos produzidos e os módulos alterados, as inspeções foram capazes de identificar 1 defeito na camada \textit{frontend} e 2 defeitos na camada \textit{backend}. Ao final da \textit{sprint}, todos os defeitos foram corrigidos antes da mesclagem final.
+
+Quanto à taxa de acertos por linha de código, a suíte de testes elaborada foi capaz de exercitar, em média, 4 vezes os trechos de código sob teste na camada \textit{frontend} e 2 vezes os trechos de código sob teste na camada \textit{backend}. Ao final da \textit{sprint} foi possível contemplar um percentual total de cobertura igual a 23,00\% na camada \textit{frontend} e 27,10\% na camada \textit{backend}.
+
+Analisando de forma rápida os percentuais de cobertura, percebe-se que o aumento foi pouco expressivo. Contudo, a suíte de testes elaborada caracterizou-se como consistente ao final da \textit{sprint} 2, sendo que todos os cenários mais básicos para os módulos sob teste foram implementados.
+
+Com relação à camada \textit{backend}, calculou-se o índice de manutenibilidade para todos os componentes alterados. A tabela \ref{table:tabela13} exibe estes dados, indicando a classe com o seu respectivo índice calculado.
+
+\begin{table}[h]
+\caption{Índice de Manutenibilidade \textit{Sprint} 2 - Portal da Transparência (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{10cm} | m{6cm} | } 
+\hline
+Empresa Punida - Modelo & 77,32 \\ 
+\hline
+Empresa Punida - \textit{Controller} & 85,20 \\ 
+\hline
+Empresa Punida - \textit{Service} & 78,38 \\ 
+\hline
+Empresa Punida Relatório - \textit{Service} & 77,45 \\ 
+\hline
+Órgãos Deliberativos - Modelo & 80,46 \\
+\hline
+Prestando Contas - \textit{Controller} & 56,71 \\
+\hline
+Prestando Contas - \textit{Service} & 45,66 \\
+\hline
+Prestando Contas Relatório - \textit{Controller} & 84,72 \\
+\hline
+Prestando Contas Relatório - \textit{Service} & 77,17 \\
+\hline
+Consulta Dinâmica Despesa - Modelo & 68,62 \\
+\hline
+Despesa - \textit{Controller} & 49,71 \\
+\hline
+\end{tabular}
+\label{table:tabela13}
+\end{table}
+
+Foi possível perceber índices de manutenibilidade dentro dos padrões estabelecidos pela \textit{Microsoft} e também, dentro da meta estabelecida pela equipe de desenvolvimento antes do início da \textit{sprint} 2. Algumas classes tiveram uma redução no índice de manutenibilidade pelo fato de que código foi acrescentado. Contudo, essa redução não se caracterizou como impactante para a qualidade em um primeiro momento. O que deve ser observado é a evolução futura desse quadro. Se o índice de manutenibilidade de uma determinada classe diminuir a cada \textit{sprint}, deverá ser feita uma refatoração.
+
+Com relação ao número de falhas identificadas pela área de negócio, nada foi reportado. Este aspecto indica que uma verificação concisa possui forte impacto na qualidade do produto entregue.
+
+Por fim, tem-se as respostas relacionadas ao questionário de verificação da satisfação dos desenvolvedores ao utilizarem o \textit{framework}. Percebeu-se maior aceitação e entendimento da importância das práticas da verificação de \textit{software} para obtenção de um produto com qualidade. A figura \ref{fig:satisfacaoPortal2} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_portal_2.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 2 do Portal}
+\label{fig:satisfacaoPortal2}
+\end{figure}
+
+\clearpage
+
+\subsection{SICOR - Sistema de Correição}
+
+\subsubsection{Planejamento}
+
+Em conversa com a área de negócio, as seguintes funcionalidades foram acordadas:
+
+\begin{itemize}
+	\item {Inclusão de Documento Originário}
+	\item {Consulta de Documentos}
+	\item {Exclusão de Documentos}
+	\item {Alteração de Documentos}
+	\item {Cadastro de Unidades - Pendência da \textit{Sprint} 1}
+\end{itemize}
+
+As funcionalidades descritas acima caracterizam-se como o núcleo do Módulo Correcional, visto que todas as denúncias que chegam à SUCOR são por meio de documentos originários. Adicionalmente, a primeira \textit{sprint} favoreceu a escolha destes itens, pois toda a estrutura já estava implementada.
+
+\subsubsection{Ação}
+
+Após priorização junto a área de negócio, a equipe de desenvolvimento registrou todas as tarefas relativas à implementação das funcionalidades no TFS. Adicionalmente, a equipe procurou estabelecer mais prioridades quanto à implementação de testes unitários. Pelo fato de terem sido alocados operações elementares, somente os testes para os módulos mais críticos foram desenvolvidos. Assim, a \textit{sprint} foi executada com êxito, entregando tudo que foi acordado.
+
+\subsubsection{Avaliação}
+
+Como mencionado na seção anterior, a \textit{sprint} 2 do projeto SICOR foi executada com êxito. As tabelas \ref{table:tabela14} e \ref{table:tabela15} exibem um resumo das métricas coletadas para as camadas de \textit{frontend} e \textit{backend}, respectivamente.
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 2 - SICOR (\textit{Frontend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 0 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 2 \\ 
+\hline
+\end{tabular}
+\label{table:tabela14}
+\end{table}
+
+\begin{table}[h]
+\caption{Tabela Resumo - Métricas \textit{Sprint} 2 - SICOR (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{8cm} | m{8cm} | } 
+\hline
+Número de Defeitos & 0 \\ 
+\hline
+Taxa de Acertos por Linha de Código & 2,76 \\ 
+\hline
+\end{tabular}
+\label{table:tabela15}
+\end{table}
+
+A partir dos dados exibidos nas tabelas acima é possível perceber uma baixa quantidade de defeitos, que evidencia uma maior precisão por parte dos desenvolvedores nos momentos de implementação. Adicionalmente, a suíte de testes unitários implementada foi capaz de exercitar, em média, 2 vezes o trecho de código sob teste na camada de \textit{frontend} e 2,76 vezes o trecho de código sob teste na camada de \textit{backend}. Ao final da \textit{sprint}, percebeu-se um percentual total de cobetura igual a 73,86\% na camada de \textit{frontend} e 60\% na camada de \textit{backend}. É válido ressaltar que não foi reportado nenhuma percepção de falha do sistema por parte da área de negócio durante a homologação.
+
+Embora o percentual total de cobertura tenha diminuído, percebe-se que a suíte de testes ainda caracteriza-se como consistente, visto que o número de acertos por linha de código aumentou. Como mencionado anteriormente, a redução do percentual deve-se ao aumento de linhas de código. De forma geral, à medida em que o projeto cresce, mais difícil é manter o percentual de 100\% de cobertura. Outro aspecto é que uma cobertura integral traz maior custo de desenvolvimento. Assim, é necessário ser mais seletivo quando se implementa testes unitários.
+
+Com relação ao quesito manutenibilidade e complexidade do código, coletou-se a métrica Flog. A seguir, tem-se a tabela \ref{table:tabela16}, que exibe a pontuação total da métrica para as principais classes implementadas.
+
+\begin{table}[h]
+\caption{Flog \textit{Sprint} 2 - SICOR (\textit{Backend})}
+\centering
+\begin{tabular}{ | m{12cm} | m{4cm} | } 
+\hline
+Documento - \textit{Controller} & 57,3 \\ 
+\hline
+Documento - Modelo & 44,1 \\ 
+\hline
+Criar Documento - \textit{Service} & 17,3 \\ 
+\hline
+Atualizar Documento - \textit{Service} & 7,1 \\ 
+\hline
+Pesquisar Documento - \textit{Service} & 29,6 \\
+\hline
+\end{tabular}
+\label{table:tabela16}
+\end{table}
+
+Com base nos dados apresentados pela tabela acima, percebe-se baixas pontuações de complexidade. Mesmo nas classes que apresentaram pontuações totais acima de 40, a média para os métodos da classe foi inferior à 8.
+
+Por fim, tem-se as respostas relacionadas ao questionário de verificação da satisfação dos desenvolvedores ao utilizarem o \textit{framework}. Assim como no projeto do Portal, percebeu-se maior aceitação e entendimento da importância das práticas da verificação de \textit{software} para obtenção de um produto com qualidade. A figura \ref{fig:satisfacaoSicor2} exibe a quantidade de respostas para cada questão do questionário de verificação da satisfação.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{figuras/isd_sicor_2.png}
+\caption{Índice de Satisfação dos Desenvolvedores - \textit{Sprint} 2 do SICOR}
+\label{fig:satisfacaoSicor2}
+\end{figure}
+
+\clearpage
+
+\subsection{Sistema de Perícia Médica}
+
+\subsubsection{Planejamento}
+
+\subsubsection{Ação}
+
+\subsubsection{Avaliação}
+
+\clearpage
