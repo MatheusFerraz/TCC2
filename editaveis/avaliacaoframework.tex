@@ -716,6 +716,21 @@ Por fim, tem-se o gráfico geral para o projeto do Sistema de Ouvidoria. Neste c
 \label{fig:evolucaoOuvdf}
 \end{figure}
 
-Com base em todas as respostas coletadas, é possível perceber que não houve nenhuma resposta do tipo discordo totalmente ou discordo parcialmente. O \textit{framework}, de maneira geral, teve uma excelente aceitação e mostrou-se eficiente na verificação da qualidade.
+Com base em todas as respostas coletadas, é possível perceber que não houve nenhuma resposta do tipo discordo totalmente ou discordo parcialmente. 
+
+Adicionalmente, estabelecendo uma breve análise com relação às demais métricas coletadas, percebeu-se que o número de falhas contemplado em ambiente de produção reduziu de forma expressiva. Durante o período de uso do \textit{framework}, em todos os projetos, constatou-se que não houve relato de falhas por parte das áreas de negócio e dos usuários. 
+
+Com relação ao índice de manutenibilidade nos projetos Portal, Sistema de Ouvidoria e Sistema de Perícia Médica, os dados coletados evidenciaram:
+
+\begin{itemize}
+	\item aumento do índice para a maior parte das classes alteradas em relação ao índice de manutenibilidade médio constatado na fase de diagnóstico;
+	\item obtenção de um excelente valor para as classes incluídas de acordo com os parâmetros da \textit{Microsoft}.
+\end{itemize}
+
+Quanto ao projeto SICOR, percebeu-se, desde o início, pontuações totais baixas para a métrica Flog, evidenciando um código menos complexo e mais modularizado. Esse aspecto é fundamental para construção de sistemas, visto que possui relação direta com o quesito escalabilidade.
+
+Outro aspecto que deve ser evidenciado é que durante a realização das inspeções foi possível constatar defeitos no código inerentes ao gerenciamento de recursos computacionais, tais como memória e processamento. Verificou-se defeitos dessa magnitude até mesmo no código das suítes de testes unitários. Contudo, em todos os projetos, os defeitos foram corrigidos antes da implantação em ambiente de produção.
+
+O \textit{framework}, de maneira geral, teve uma excelente aceitação e mostrou-se eficiente na verificação da qualidade do código.
 
 \clearpage
