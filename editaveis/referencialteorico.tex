@@ -22,9 +22,9 @@ A inspeção é o tipo mais formal de revisão. O objetivo principal é a identi
 
 \subsection{Itens da Inspeção de Código}
 
-É válido ressaltar que inspeções formais de \textit{software} objetivam a detecção e eliminação de erros em produtos desenvolvidos durante o seu ciclo de desenvolvimento. Nesse sentido, inspeções formais são aplicáveis à qualquer parte do produto de \textit{software}, incluindo requisitos, especificação, \textit{design} e código \cite{inspecao1}.
+É válido ressaltar que inspeções formais de \textit{software} objetivam a detecção e eliminação de defeitos em produtos desenvolvidos durante o seu ciclo de desenvolvimento. Nesse sentido, inspeções formais são aplicáveis à qualquer parte do produto de \textit{software}, incluindo requisitos, especificação, \textit{design} e código \cite{inspecao1}.
 
-Segundo \cite{inspecao1}, um \textit{checklist} para inspeção formal de código deve contemplar, dentre outras técnicas, os principais itens:
+Segundo \cite{inspecao1}, um \textit{checklist} para inspeção formal de código deve contemplar, dentre outros itens, os principais itens:
 
 \begin{itemize}
 	\item \textbf{Retorno de métodos}: Retorno de métodos e/ou rotinas muitas vezes pode provocar a interrupção do fluxo do programa, descontinuidade, corrupção de pilha, estouro de memória ou valor incorreto. Assim, verificando este quesito, é possível constatar se todas as rotinas ou métodos retornam valores de maneira correta.
@@ -47,7 +47,7 @@ Segundo \cite{inspecao1}, um \textit{checklist} para inspeção formal de códig
 
 	\item \textbf{Diretivas ao pré-processador}: Deve-se evitar a utilização indiscriminada das diretivas ao pré-processador no código fonte. Este aspecto evita erros durante a manutenção.
 
-	\item \textbf{Otimização de código}: Deve-se evitar deterinadas otimizações durante a compilação, o que pode gerar um código objeto de maneira inesperada. Em geral, linguagens de programação de alto nível têm aspectos ambíguos que podendo levar a uma dupla interpretação dependendo do nível de otimização selecionado.
+	\item \textbf{Otimização de código}: Deve-se evitar determinadas otimizações durante a compilação, o que pode gerar um código objeto de maneira inesperada. Em geral, linguagens de programação de alto nível têm aspectos ambíguos que podendo levar a uma dupla interpretação dependendo do nível de otimização selecionado.
 \end{itemize}
 
 O \textit{framework} proposto neste trabalho centraliza a prática da inspeção no exame do código fonte do produto de software, incluindo o código dos testes unitários implementados.
